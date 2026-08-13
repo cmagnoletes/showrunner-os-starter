@@ -42,15 +42,17 @@ This folder is your workspace. Everything your Showrunner OS does happens here.
 ## Step 2 — Drop your assets in
 
 Create an `inventory/` folder and put anything that already describes you or your customer
-into it — so the AI can read your real material instead of making things up:
+into it, so the AI reads your real material instead of making things up. Drop the raw files
+in as-is. You do not need to convert anything by hand: it will transcribe your audio and
+video, and pull the fonts and colors straight out of your slide decks and PDFs.
 
-- Your website copy (save the About / services pages as text, or just paste the URL when asked)
-- ICP or positioning docs, pitch decks, offer descriptions
-- Sales or customer call recordings / transcripts
+- Your website (paste the URL when asked, or save the About / services pages as text)
+- ICP or positioning docs, pitch decks, offer descriptions (raw decks and PDFs are fine)
+- Sales or customer call recordings or transcripts (raw audio or video is fine)
 - Testimonials, reviews, case studies
-- A few of your own posts, emails, or video transcripts (so it learns your voice)
+- A few of your own posts, emails, or video transcripts, so it learns your voice
 
-Whatever you have. Thin is fine — the interview fills the gaps.
+Whatever you have. Thin is fine, the interview fills the gaps.
 
 ## Step 3 — Run it (Claude Code or Codex)
 
@@ -69,8 +71,9 @@ claude
 Then tell it:
 
 > Read `brand-baseline-prompt.md` and run it on me. Use everything in the `inventory/`
-> folder and my website as source material. Mine first, then interview me only on what's
-> missing. Write the finished result to `brand-baseline.md`.
+> folder and my website as source material, transcribing any audio or video and pulling
+> brand tokens from any decks. Mine first, then interview me only on what's missing. Write
+> the finished result to `brand-baseline.md`.
 
 ### Codex
 
@@ -85,7 +88,8 @@ codex
 Then give it the same instruction:
 
 > Read `brand-baseline-prompt.md` and run it on me. Use everything in the `inventory/`
-> folder as source material. Mine first, then interview me only on what's missing. Write
+> folder and my website as source material, transcribing any audio or video and pulling
+> brand tokens from any decks. Mine first, then interview me only on what's missing. Write
 > the finished result to `brand-baseline.md`.
 
 Either way: it reads the prompt, reads your files, drafts what it can, then interviews you

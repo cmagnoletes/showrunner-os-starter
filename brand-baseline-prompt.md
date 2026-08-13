@@ -16,7 +16,7 @@ Three rules before we start:
 
 ## Phase 0. The inventory
 
-Ask me for every item on this list that exists, then wait until I have provided files, links, or said "doesn't exist":
+If you are running inside the repo, check the `inventory/` folder first and use whatever is already there. Then ask me for anything on this list that isn't present yet, and wait until I have provided files, links, or said "doesn't exist":
 
 - Customer or ICP definition documents, positioning docs, pitch decks, offer descriptions
 - My website URL and any other pages that represent me (about page, service pages, landing pages)
@@ -28,12 +28,14 @@ Ask me for every item on this list that exists, then wait until I have provided 
 
 ## Phase 1. Mine first
 
-From the inventory, extract and draft BEFORE interviewing me:
+First, process everything in the inventory, whatever the format. If there are audio or video files, transcribe them yourself (download WhisperX or a local transcriber if you need to, and handle MP3, MP4, or whatever is there). If there are slide decks or PDFs, read them and pull the brand tokens out. If I gave you a URL, open it in the browser and read it. Do not ask me to convert anything by hand.
 
-- From the website: colors (hex), fonts, logo files, tagline, and how I currently describe what I do
+From all of it, extract and draft BEFORE interviewing me:
+
+- Visual tokens, from the website, decks, or PDFs: colors (hex), fonts, font sizes and heading sizes, logo files, and any consistent design patterns
 - From calls and testimonials: the exact words customers use for their problems and for what I fixed (verbatim, attributed)
 - From my content: how I actually talk (recurring phrases, register, analogies) and what I keep saying I believe
-- From ICP or positioning docs: who I serve and how I currently differentiate
+- From ICP or positioning docs: who I serve, how I currently differentiate, my current tagline, and how I describe what I do
 
 Present a draft baseline where every item carries one of three tags:
 
@@ -41,11 +43,13 @@ Present a draft baseline where every item carries one of three tags:
 - [FLAGGED, from asset X]: found it, but it reads generic or off; recommend replacing
 - [GAP]: nothing exists; ask me in the interview
 
+Then run a tension pass. Cross-check three things against each other: what my website and positioning docs CLAIM, the exact words my customers actually use, and how I describe myself in my own content. Where they disagree, say so plainly and list each contradiction (for example: "your site says X, but your customers describe it as Y, and you call it Z"). Bring these tensions into the interview so we reconcile them together, instead of quietly picking one.
+
 ## Phase 2. The interview (gaps and verification only)
 
 One question at a time. Push me for specifics when I get vague. Cover the gaps in this order:
 
-1. The outcome, worked backward. What is the desired outcome of this channel 12 months from now, in business terms? And what would I have to be KNOWN FOR in order for that to happen? (Brand building starts from the outcome, never from "what should I post.")
+1. The outcome, worked backward. Four questions, in order, because brand building starts from the outcome and works back, never from "what should I post today": (a) What is the outcome I want from this channel 12 months from now, in business terms? (b) What would I have to be KNOWN FOR for that to happen? (c) What do I have to DO now to get there? (d) What do I have to LEARN to get there? Push me on all four.
 2. The one viewer. The single person this channel is for: what they run, what they are struggling with the moment they hit play, what they have already tried. Then go one layer down: what is the surface problem (what's broken), what is the private problem (how it makes them feel), and what is the principle problem (why it is wrong that the world works this way)? That third layer is where differentiation usually lives.
 3. The problem in their words. Verify the language you mined from my calls and testimonials, or ask me for it if nothing existed. Their words, not my diagnosis.
 4. Differentiation. What do I do that competitors can't or won't copy? What does my industry do that I want to see done differently? For each reference channel I named: what would I take, and what would I refuse? The refusals define the brand as much as the takes.
