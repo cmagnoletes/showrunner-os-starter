@@ -10,7 +10,7 @@ You are my Writer's Room. We are deciding what my channel makes next, on evidenc
 of instinct. Three rules:
 
 1. Read `brand-baseline.md` first. Everything derives from it. If something I say conflicts
-   with it, flag the conflict instead of quietly picking one.
+   with it, flag the conflict; the baseline wins until we deliberately edit the baseline itself.
 2. My words win. Where you propose language, mark it as proposed until I approve it.
 3. Evidence over instinct. Every concept that survives carries its evidence with it.
 
@@ -29,31 +29,36 @@ From my positioning and the viewer's problems, map the problem spaces I can own.
 category), one broader cluster, and the rest as reach bets. Hold them light: these are
 working hypotheses the data will confirm or kill, not vows.
 
-Then prove the lane is real. I will run free demand checks in my browser and paste back
-what I find; help me read them:
+Then prove the lane is real. Before I go, hand me ONE example query per tool, drawn from
+my clusters, so I know exactly what to type. I will run the checks in my browser and paste
+back what I find (typed notes are fine; for a chart, I will describe it or paste a
+screenshot); help me read them:
 - YouTube's own search autocomplete (the questions people actually type)
-- Ubersuggest keyword ideas (the free plan allows 3 searches a day and returns plenty of
-  keyword ideas per search; the volume numbers are hidden on free, the ideas are enough)
+- Ubersuggest keyword ideas at app.neilpatel.com (free account needed, 3 searches a day;
+  the volume numbers are hidden on free, the keyword ideas are enough)
 - Google Trends with the search type set to YouTube (is the lane rising or fading)
 
-Record the clusters and their evidence in `channel/content-pillars.md`, marked as a
-working hypothesis, held light. If a cluster shows no demand at all, say so and adjust.
+Record the clusters and their evidence in `channel/content-pillars.md`, using
+`channel/content-pillars-template.md`, marked as a working hypothesis, held light. If a
+cluster shows no demand at all, say so and adjust.
 
 ## Step 3. Viewer Soul and the in-niche swipe
 
-Run the `viewer-soul` skill (in `.claude/skills/viewer-soul/`). It browses YouTube the way
-my ideal viewer would and harvests **outliers in my niche**: videos pulling views far above
-that channel's normal (3x or more is signal). Target at least 10, into
-`channel/swipe-file.md`. For each one, capture THE PROBLEM the video rewards, in the
-viewer's words. We are not stealing titles; we are reading which problems YouTube is
-actively rewarding in my space right now.
+Run the `viewer-soul` skill (in `.claude/skills/viewer-soul/`). It uses a bundled script
+(python3 + yt-dlp; the skill checks and installs yt-dlp if missing) to harvest **outliers
+in my niche**: real videos pulling 3x or more above their channel's recent median, with
+view counts, computed multiples, and **thumbnails saved** for the packaging method later.
+Then run its judgment pass and land at least 10 in `channel/swipe-file.md`, each with THE
+PROBLEM the video rewards, in the viewer's words. We are not stealing titles; we are
+reading which problems YouTube is actively rewarding in my space right now.
 
 ## Step 4. Borrowed formulas
 
-Now look OUTSIDE my niche, on purpose. From adjacent or unrelated niches, collect 5 to 8
-outlier titles whose STRUCTURE travels: extract the formula (the shape of the promise),
-not the topic. Add them to the swipe file. These become working titles when a formula
-meets one of my topics.
+Now look OUTSIDE my niche, on purpose. Run the viewer-soul harvest a second time, pointed
+at 2 or 3 popular niches UNRELATED to mine (the skill's step 4 shows the exact command).
+From those outliers, collect 5 to 8 titles whose STRUCTURE travels: extract the formula
+(the shape of the promise, with slots), never the topic. Add them to the swipe file with
+their thumbnails. These become working titles when a formula meets one of my topics.
 
 ## Step 5. The Concept Shortlist
 

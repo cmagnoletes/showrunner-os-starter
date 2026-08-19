@@ -13,6 +13,8 @@ purpose.
 | 5 |  |  |  |  |  |  | ready |
 | 6 |  |  |  |  |  |  | ready |
 
+Delete the rows you don't use: 4 strong concepts beat 6 padded ones.
+
 Status flow: `ready` → `beat sheet` → `recorded` → `published` → `read` (the verdict:
 double down, kill, or iterate).
 

@@ -28,7 +28,7 @@ If you are running inside the repo, check the `inventory/` folder first and use 
 
 ## Phase 1. Mine first
 
-First, process everything in the inventory, whatever the format. If there are audio or video files, transcribe them yourself (download WhisperX or a local transcriber if you need to, and handle MP3, MP4, or whatever is there). If there are slide decks or PDFs, read them and pull the brand tokens out. If I gave you a URL, open it in the browser and read it. Do not ask me to convert anything by hand.
+First, process everything in the inventory, whatever the format. If there are audio or video files, transcribe them yourself (a local transcriber like WhisperX works if the machine can take it; if installing one fails or looks heavy, do NOT fight it: ask me for an existing transcript, or mark that item [GAP] and move on). If there are slide decks or PDFs, read them and pull the brand tokens out. If I gave you a URL, open it in the browser and read it. Do not ask me to convert anything by hand.
 
 From all of it, extract and draft BEFORE interviewing me:
 

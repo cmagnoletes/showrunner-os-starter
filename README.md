@@ -33,14 +33,17 @@ one more part each session.
 Already have your repo from Session 1? Update it first — open Claude Code inside your
 repo folder and tell it:
 
-> Fetch `CLAUDE.md`, `methods/signal/writers-room-prompt.md`,
-> `.claude/skills/viewer-soul/SKILL.md`, and `channel/concept-shortlist-template.md` from
-> https://github.com/cmagnoletes/showrunner-os-starter and add them to this repo, then
-> commit.
+> Fetch `CLAUDE.md`, `methods/signal/writers-room-prompt.md`, the whole
+> `.claude/skills/viewer-soul/` folder (including `scripts/harvest.py`), and the two
+> `channel/` templates from https://github.com/cmagnoletes/showrunner-os-starter and add
+> them to this repo, then commit.
 
 Then run the Writer's Room with one instruction:
 
 > Read `methods/signal/writers-room-prompt.md` and run it on me.
+
+Budget 60 to 90 minutes the first time. The only extra tool it needs is `yt-dlp`
+(free); your Claude will check for it and install it if it is missing.
 
 It reads your `brand-baseline.md`, interviews you on your one viewer and your clusters,
 walks you through the free demand checks, runs the `viewer-soul` skill to harvest outliers
@@ -64,8 +67,9 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
 cd YOUR-REPO
 ```
 
-No Git? Click **Code → Download ZIP**, unzip it, and open that folder. (Or skip the harness
-entirely — see "No harness?" at the bottom.)
+No Git? Click **Code → Download ZIP**, unzip it, and open that folder; you can ask Claude
+Code to "initialize git here and commit everything" later, when you reach Step 4. (Or skip
+the harness entirely — see "No harness?" at the bottom.)
 
 This folder is your workspace. Everything your Showrunner OS does happens here.
 
@@ -97,6 +101,10 @@ npm install -g @anthropic-ai/claude-code
 # from inside your repo folder:
 claude
 ```
+
+Heads-up, first run only: `claude` opens a browser window to log in, and it needs a Claude
+account with a paid plan (Claude Pro works) or API billing. Codex is the same idea with a
+ChatGPT account.
 
 Then tell it:
 
@@ -136,7 +144,9 @@ git commit -m "Brand Baseline v1"
 git push
 ```
 
-(Or just ask Claude Code / Codex to commit and push for you — both can run Git.)
+(Or just ask Claude Code / Codex to commit and push for you — both can run Git. Downloaded
+the ZIP instead of cloning? Ask it to "initialize git here, create a private GitHub repo,
+and push" — it will walk you through it.)
 
 ---
 
@@ -158,10 +168,10 @@ next session — you'll just be moving a file you already have.
 
 ## What happens next
 
-Next session we stand up the rest of the system on your harness: the config that makes this
-file the auto-loaded root context (a `CLAUDE.md` or `AGENTS.md` that tells every agent "read
-`brand-baseline.md` first"), then the first component that consumes it — your content
-pillars. You're not cold-starting a repo next week. You're activating the one you already have.
+Session 3 turns your Concept Shortlist into recordable **beat sheets**, and you
+batch-record your first videos. Every session adds one more working part to the same
+repo: same foundation, growing machine. You're never cold-starting; you're activating
+the Showrunner OS you already have.
 
 ---
 

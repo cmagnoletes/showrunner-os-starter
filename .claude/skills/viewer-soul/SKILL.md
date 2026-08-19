@@ -1,57 +1,105 @@
 ---
 name: viewer-soul
-description: See YouTube through your ideal viewer's eyes. Builds a persona lens from brand-baseline.md, browses YouTube the way your Ideal Viewer Persona would, and harvests in-niche outliers into your swipe file. Use when hunting topics, filling the Concept Shortlist, or reading what the algorithm currently rewards in your niche.
+description: See YouTube through your ideal viewer's eyes. Harvests real in-niche outliers (view counts, channel medians, computed multiples, AND thumbnails) plus cross-niche title formulas into your swipe file. Runs on a bundled script, no browser required. Use when hunting topics, filling the Concept Shortlist, or reading what the algorithm currently rewards in your niche.
 ---
 
 # Viewer Soul (starter)
 
-YouTube's homepage and search are the best topic-research tools on earth, but only when
-YouTube thinks you are your viewer. This skill reads the feed and the search results as
-your Ideal Viewer Persona, and turns what it finds into swipe-file entries your Writer's Room
-uses to pick concepts.
+YouTube's search and feed are the best topic-research tools on earth, but only read
+through your viewer's eyes. This skill harvests **evidence**: real outlier videos, their
+real multiples against each channel's recent normal, and their **thumbnails** (you will
+reuse those in the packaging method later). The bundled script does the deterministic
+work; you (Claude) do the judgment.
 
 ## What it needs
 
-- `brand-baseline.md` (the Ideal Viewer Persona section)
-- `channel/content-pillars.md`, if it exists yet
-- A browser Claude Code can drive. If a dedicated persona YouTube account exists and is
-  logged in, use it. If not, run in search-first mode: no account needed, search results
-  and channel pages carry the outlier signal on their own.
+- `brand-baseline.md`, the **Ideal Viewer Persona** section (their words for the problem).
+- **python3** and **yt-dlp**. Check first: `yt-dlp --version`. If missing, install it
+  (`pip3 install -U yt-dlp`, or `brew install yt-dlp`, or `pipx install yt-dlp`) and tell
+  the owner what you installed. Nothing else is required. **No browser is required.**
+- Internet access. The script reads YouTube search results and public channel RSS feeds,
+  politely (it sleeps between feed fetches).
 
-## Protocol (one session, 20 to 40 minutes, human-paced)
+## The protocol
 
-1. **Build the persona lens.** From the baseline: who the viewer is, the problems in their
-   words, what they would actually type into YouTube. Write 5 to 8 real search queries.
-2. **Browse like a human.** Run the searches. Open 2 or 3 promising results per search.
-   Scan what YouTube surfaces next to them. Keep human pacing; this is reading, not
-   scraping. Watch-only: never comment, like, subscribe, or engage.
-3. **Harvest outliers.** An outlier is a video pulling views clearly above that channel's
-   normal. Check the channel's recent videos to see its baseline; 3x or more above it is
-   signal. Views far above the channel's subscriber count is a second tell. Collect at
-   least 10 from inside the niche.
-4. **Capture the problem, not the title.** For each outlier record: URL, title, channel,
-   channel size, view count, roughly how far above normal it is, and one line in the
-   viewer's words naming THE PROBLEM the video rewards.
-5. **Write to `channel/swipe-file.md`** using the structure below, then commit.
+### 1. Build the persona lens
 
-## Swipe file structure
+From the baseline's Ideal Viewer Persona: write **5 to 8 search queries in the viewer's
+own words** (their words for the problem, not industry jargon). Example: a persona who
+says "editing eats my week" produces `how to make youtube videos faster`, not
+`video production workflow optimization`. Show the owner the queries before running.
+
+### 2. Harvest the niche (deterministic)
+
+```
+python3 .claude/skills/viewer-soul/scripts/harvest.py \
+  --queries "query one; query two; query three; query four; query five" \
+  --out channel/swipe/in-niche
+```
+
+The script searches each query, deduplicates, pulls each channel's recent uploads from
+its public RSS feed, computes the **median** views, flags candidates at **3x or more**
+above their channel's median (minimum 5,000 views), downloads their **thumbnails** to
+`channel/swipe/in-niche/thumbs/`, and writes everything to
+`channel/swipe/in-niche/candidates.json`.
+
+### 3. The judgment pass (yours)
+
+Read `candidates.json` and curate. Drop:
+- **Evergreen megahits**: an old classic on a channel whose recent uploads are small
+  produces absurd multiples (a 10-year-old TED talk can read as 800,000x). Prefer
+  outliers from roughly the last 12 months; if the upload date is unclear, open the URL.
+- **Tiny-median spikes**: a channel median under ~100 views makes the multiple
+  directional at best. Note it, don't headline it.
+- **Off-niche accidents** that matched a query but not the persona.
+
+Keep **at least 10**. For each, write one line in the viewer's words naming **THE
+PROBLEM the video rewards**. That line, not the title, is the asset.
+
+### 4. Harvest formulas (same script, other niches)
+
+```
+python3 .claude/skills/viewer-soul/scripts/harvest.py \
+  --queries "productivity system; learn anything faster; morning routine" \
+  --out channel/swipe/formulas
+```
+
+Pick 2 or 3 popular niches UNRELATED to the owner's. From those outliers, extract **5 to
+8 title formulas**: the structure with slots, never the topic. Example: "I Studied 1,000
+Tech Founders, Here's What Made Them Win" → `"I studied [N of a group]. Here's what made
+the winners win."` The same judgment pass applies (recency, tiny medians).
+
+### 5. Write the swipe file
+
+Append to `channel/swipe-file.md` (create it from this structure on first run), then
+commit:
 
 ```markdown
 # Swipe file — [channel name]
 
 ## In-niche outliers (problems the algorithm is rewarding)
-| Title | Channel | Ch. size | Views | ~Multiple | The problem it rewards |
-|---|---|---|---|---|---|
+| Title | Channel | Ch. median | Views | Multiple | The problem it rewards | URL | Thumb |
+|---|---|---|---|---|---|---|---|
 
-## Borrowed formulas (structures that travel, from other niches)
-| Real title (source) | Channel | Views | The formula (the shape, not the topic) |
-|---|---|---|---|
+## Borrowed formulas (structures that travel)
+| Real title (source) | Channel | Views · multiple | The formula (structure, with slots) | URL | Thumb |
+|---|---|---|---|---|---|
 ```
 
-## Limits, on purpose
+Thumb = the saved path under `channel/swipe/*/thumbs/`. Keep URLs and thumbnails always:
+videos get deleted and re-thumbnailed later, and the packaging method (a later session)
+works directly from these saved thumbnails.
 
-- One session per day, maximum. Human pacing. The goal is signal, not scale.
-- Watch-only, always. No engagement actions of any kind.
-- This starter reads search plus any fresh account's surface. The deeper version, a
-  dedicated persona account trained gently over weeks until its homepage IS your viewer's
-  homepage, follows the same protocol with the account signed in.
+## Done means
+
+10+ curated in-niche outliers with their problem lines · 5 to 8 extracted formulas ·
+thumbnails saved · `channel/swipe-file.md` updated · everything committed.
+
+## Optional deeper mode: the feed read
+
+If the owner has a **dedicated persona YouTube account** and a browser tool is available,
+also read the homepage as the persona: note the in-niche items the feed is pushing, then
+verify each with the same RSS median math before it enters the swipe file. Rules:
+watch-only (never comment, like, or subscribe), human pacing, one session per day. The
+fully trained persona account is the deeper version of this skill; the harvest above
+works everywhere, day one, with no account at all.
