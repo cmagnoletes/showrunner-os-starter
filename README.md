@@ -28,6 +28,27 @@ config (so every future prompt reads your baseline automatically), its first met
 Writer's Room), and its first working skill (Viewer Soul). Same repo, same foundation,
 one more part each session.
 
+### How to run Session 2
+
+Already have your repo from Session 1? Update it first — open Claude Code inside your
+repo folder and tell it:
+
+> Fetch `CLAUDE.md`, `methods/signal/writers-room-prompt.md`,
+> `.claude/skills/viewer-soul/SKILL.md`, and `channel/concept-shortlist-template.md` from
+> https://github.com/cmagnoletes/showrunner-os-starter and add them to this repo, then
+> commit.
+
+Then run the Writer's Room with one instruction:
+
+> Read `methods/signal/writers-room-prompt.md` and run it on me.
+
+It reads your `brand-baseline.md`, interviews you on your one viewer and your clusters,
+walks you through the free demand checks, runs the `viewer-soul` skill to harvest outliers
+into `channel/swipe-file.md`, and writes your finished shortlist to
+`channel/concept-shortlist.md`. You approve, edit, and commit. **Done means your shortlist
+is committed: 4 to 6 concepts, each with its evidence.** They become beat sheets next
+session.
+
 ---
 
 ## Step 1 — Get your own copy
