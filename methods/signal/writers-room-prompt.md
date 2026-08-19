@@ -16,7 +16,7 @@ of instinct. Three rules:
 
 ## Step 1. The one viewer
 
-Pull my Audience of One from the baseline and sharpen them: what they want, what is in
+Pull my Ideal Viewer Persona from the baseline (its section 2) and sharpen them: what they want, what is in
 their way, what they have already tried. Then go one layer down, three levels: what is
 broken (the surface problem), how it feels (the private problem), and why it is wrong that
 the world works this way (the principle problem). That third layer is where my angle lives.
@@ -36,7 +36,8 @@ what I find; help me read them:
   keyword ideas per search; the volume numbers are hidden on free, the ideas are enough)
 - Google Trends with the search type set to YouTube (is the lane rising or fading)
 
-Record the evidence per cluster. If a cluster shows no demand at all, say so and adjust.
+Record the clusters and their evidence in `channel/content-pillars.md`, marked as a
+working hypothesis, held light. If a cluster shows no demand at all, say so and adjust.
 
 ## Step 3. Viewer Soul and the in-niche swipe
 

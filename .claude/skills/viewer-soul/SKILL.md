@@ -1,18 +1,18 @@
 ---
 name: viewer-soul
-description: See YouTube through your ideal viewer's eyes. Builds a persona lens from brand-baseline.md, browses YouTube the way your Audience of One would, and harvests in-niche outliers into your swipe file. Use when hunting topics, filling the Concept Shortlist, or reading what the algorithm currently rewards in your niche.
+description: See YouTube through your ideal viewer's eyes. Builds a persona lens from brand-baseline.md, browses YouTube the way your Ideal Viewer Persona would, and harvests in-niche outliers into your swipe file. Use when hunting topics, filling the Concept Shortlist, or reading what the algorithm currently rewards in your niche.
 ---
 
 # Viewer Soul (starter)
 
 YouTube's homepage and search are the best topic-research tools on earth, but only when
 YouTube thinks you are your viewer. This skill reads the feed and the search results as
-your Audience of One, and turns what it finds into swipe-file entries your Writer's Room
+your Ideal Viewer Persona, and turns what it finds into swipe-file entries your Writer's Room
 uses to pick concepts.
 
 ## What it needs
 
-- `brand-baseline.md` (the Audience of One section)
+- `brand-baseline.md` (the Ideal Viewer Persona section)
 - `channel/content-pillars.md`, if it exists yet
 - A browser Claude Code can drive. If a dedicated persona YouTube account exists and is
   logged in, use it. If not, run in search-first mode: no account needed, search results
