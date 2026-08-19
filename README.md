@@ -18,6 +18,15 @@ You start today with the foundation itself: **the distillation of your brand**, 
 |---|---|
 | `brand-baseline-prompt.md` | The interview that produces your brand foundation. You run this. |
 | `brand-baseline.md` | Where your finished foundation lives. Empty until you fill it. |
+| `CLAUDE.md` | The root config. Claude Code reads it automatically: baseline first, always. |
+| `methods/signal/writers-room-prompt.md` | The Writer's Room. Turns your baseline into your Concept Shortlist. |
+| `.claude/skills/viewer-soul/` | A working skill: sees YouTube through your viewer's eyes, harvests outliers. |
+| `channel/concept-shortlist-template.md` | Where your 4 to 6 video concepts land. |
+
+**Session 2 grew the system its first working parts.** The Showrunner OS now has its root
+config (so every future prompt reads your baseline automatically), its first method (the
+Writer's Room), and its first working skill (Viewer Soul). Same repo, same foundation,
+one more part each session.
 
 ---
 
