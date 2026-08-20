@@ -17,7 +17,8 @@ of instinct. Three rules:
 ## Step 1. The one viewer
 
 Pull my Ideal Viewer Persona from the baseline (its section 2) and sharpen them: what they want, what is in
-their way, what they have already tried. Then go one layer down, three levels: what is
+their way, what they have already tried. If the baseline has not given this person a name,
+name them with me now (one human, not a demographic). Then go one layer down, three levels: what is
 broken (the surface problem), how it feels (the private problem), and why it is wrong that
 the world works this way (the principle problem). That third layer is where my angle lives.
 Interview me only on what the baseline does not already answer.
