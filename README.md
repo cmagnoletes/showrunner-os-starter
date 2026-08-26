@@ -22,11 +22,36 @@ You start today with the foundation itself: **the distillation of your brand**, 
 | `methods/signal/writers-room-prompt.md` | The Writer's Room. Turns your baseline into your Concept Shortlist. |
 | `.claude/skills/viewer-soul/` | A working skill: sees YouTube through your viewer's eyes, harvests outliers. |
 | `channel/concept-shortlist-template.md` | Where your 4 to 6 video concepts land. |
+| `methods/package/the-hold.md` | The retention doctrine. Every beat sheet is built from it. |
+| `methods/package/beat-sheet-prompt.md` | The Beat Sheet method. Turns shortlist concepts into recordable outlines, batch-first. |
+| `videos/beat-sheet-template.md` | The shape of each video's beat sheet. One folder per video: `videos/001/`, `002/`… |
+| `channel/home-studio.md` | The recording setup: look and sound credible with what you already own. |
 
-**Session 2 grew the system its first working parts.** The Showrunner OS now has its root
-config (so every future prompt reads your baseline automatically), its first method (the
-Writer's Room), and its first working skill (Viewer Soul). Same repo, same foundation,
-one more part each session.
+**Session 3 turned the system toward recording.** The Showrunner OS now holds the
+retention doctrine as a file (The Hold), the method that applies it to your shortlist
+(the Beat Sheet), the per-video folder structure, and your home-studio reference. Same
+repo, same foundation, one more part each session.
+
+### How to run Session 3
+
+Have your repo from Sessions 1 and 2? Update it first — open Claude Code inside your
+repo folder and tell it:
+
+> Fetch `methods/package/the-hold.md`, `methods/package/beat-sheet-prompt.md`,
+> `videos/beat-sheet-template.md`, `videos/README.md`, `channel/home-studio.md`, and the
+> updated `CLAUDE.md` from https://github.com/cmagnoletes/showrunner-os-starter and add
+> them to this repo, then commit.
+
+Then run the Beat Sheet with one instruction:
+
+> Read `methods/package/beat-sheet-prompt.md` and run it on me.
+
+It shows you your shortlist, you pick your top 2 or 3 concepts, and it builds a beat
+sheet for each in one pass: recordable outlines built on The Hold, in your voice, written
+to `videos/001/`, `002/`, `003/`. Then set up once (`channel/home-studio.md` has the
+five-minute checklist) and batch-record them in one session. **Done means footage in the
+can: 2 or more raw videos, ideally 3.** Editing is a later session, on purpose; rough is
+exactly right.
 
 ### How to run Session 2
 
@@ -168,10 +193,10 @@ next session — you'll just be moving a file you already have.
 
 ## What happens next
 
-Session 3 turns your Concept Shortlist into recordable **beat sheets**, and you
-batch-record your first videos. Every session adds one more working part to the same
-repo: same foundation, growing machine. You're never cold-starting; you're activating
-the Showrunner OS you already have.
+Session 4 is the Marquee: the thumbnail and title craft that earn the click, applied to
+the videos you just recorded. Every session adds one more working part to the same repo:
+same foundation, growing machine. You're never cold-starting; you're activating the
+Showrunner OS you already have.
 
 ---
 

@@ -19,10 +19,14 @@ version, so nothing is ever lost and nothing starts over.
 
 - `brand-baseline.md` — the foundation. Read first, always.
 - `inventory/` — raw source material (docs, transcripts, recordings). Mine it, never invent over it.
-- `channel/` — standing strategy derived from the baseline: pillars, the concept shortlist, the swipe file.
-- `methods/` — the prompts you run, one per method, grouped by Loop beat (signal / package / publish / scale).
+- `channel/` — standing strategy derived from the baseline (pillars, the concept shortlist, the
+  swipe file) plus standing references like `home-studio.md`, the recording setup.
+- `methods/` — the prompts you run and the doctrine files they read, grouped by Loop beat
+  (signal / package / publish / scale). `package/the-hold.md` is the retention doctrine; every
+  beat sheet derives from it.
 - `.claude/skills/` — working tools Claude Code runs itself. Viewer Soul lives here.
-- `videos/` — one folder per video as you produce (beat sheet, packaging, reads). Arrives in later sessions.
+- `videos/` — one folder per video (`001/`, `002/`…), each holding that video's beat sheet now,
+  its packaging and reads in later sessions. `videos/beat-sheet-template.md` is the shape.
 
 ## The operating model (the Loop)
 
