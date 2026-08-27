@@ -26,7 +26,7 @@ version, so nothing is ever lost and nothing starts over.
   beat sheet derives from it.
 - `.claude/skills/` — working tools Claude Code runs itself. Viewer Soul lives here.
 - `videos/` — one folder per video (`001/`, `002/`…), each holding that video's beat sheet now,
-  its packaging and reads in later sessions. `videos/beat-sheet-template.md` is the shape.
+  its packaging and reads in later sessions. `videos/beat-sheet-template.md` is the template.
 
 ## The operating model (the Loop)
 

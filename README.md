@@ -25,7 +25,7 @@ You start today with the foundation itself: **the distillation of your brand**, 
 | `methods/package/the-hold.md` | The retention doctrine. Every beat sheet is built from it. |
 | `methods/package/beat-sheet-prompt.md` | The Beat Sheet method. Turns shortlist concepts into recordable outlines, batch-first. |
 | `videos/beat-sheet-template.md` | The shape of each video's beat sheet. One folder per video: `videos/001/`, `002/`… |
-| `channel/home-studio.md` | The recording setup: look and sound credible with what you already own. |
+| `channel/home-studio.md` | The five-minute pre-shoot checklist. The full [Home Studio Guide](https://carlosmagno.me/home-studio-guide.pdf) is a PDF. |
 
 **Session 3 turned the system toward recording.** The Showrunner OS now holds the
 retention doctrine as a file (The Hold), the method that applies it to your shortlist
@@ -48,10 +48,11 @@ Then run the Beat Sheet with one instruction:
 
 It shows you your shortlist, you pick your top 2 or 3 concepts, and it builds a beat
 sheet for each in one pass: recordable outlines built on The Hold, in your voice, written
-to `videos/001/`, `002/`, `003/`. Then set up once (`channel/home-studio.md` has the
-five-minute checklist) and batch-record them in one session. **Done means footage in the
-can: 2 or more raw videos, ideally 3.** Editing is a later session, on purpose; rough is
-exactly right.
+to `videos/001/`, `002/`, `003/`. Then set up once — the
+[Home Studio Guide](https://carlosmagno.me/home-studio-guide.pdf) covers the whole
+setup, and `channel/home-studio.md` keeps the five-minute checklist — and batch-record
+them in one session. **Done means footage in the can: 2 or more raw videos, ideally 3.**
+Editing is the next session, on purpose; rough is exactly right.
 
 ### How to run Session 2
 
@@ -193,9 +194,10 @@ next session — you'll just be moving a file you already have.
 
 ## What happens next
 
-Session 4 is the Marquee: the thumbnail and title craft that earn the click, applied to
-the videos you just recorded. Every session adds one more working part to the same repo:
-same foundation, growing machine. You're never cold-starting; you're activating the
+Session 4 is the edit: turning the raw takes you just recorded into finished videos, so
+bring your footage. Packaging (the thumbnail and title craft) comes right after, on the
+runway to publishing. Every session adds one more working part to the same repo: same
+foundation, growing machine. You're never cold-starting; you're activating the
 Showrunner OS you already have.
 
 ---

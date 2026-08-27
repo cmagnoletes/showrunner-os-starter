@@ -8,9 +8,9 @@ The one law over all of it: the click carries a promise, and the video has to ke
 YouTube reads what happens after the click more closely than anything else. Every part
 below exists to keep that promise, minute after minute.
 
-## Part 1 · The cold open (the first 30 seconds)
+## Part 1 · The hook (the first 30 seconds)
 
-The open is a trailer for the video, and its only job is to earn the next few minutes.
+The hook is the first 30 seconds, and its only job is to earn the next few minutes.
 Most of the people who ever leave, leave here.
 
 - Open on the problem or the stakes. Say the biggest, most unavoidable thing first, the
@@ -22,23 +22,23 @@ Most of the people who ever leave, leave here.
 
 ## Part 2 · The spine (sections and re-hooks)
 
-Three to five sections, in a shape that fits the concept: a ranked list, a how-I-did-it,
+Three to five sections, in a format that fits the concept: a ranked list, a how-I-did-it,
 a why-this-fails, a this-versus-that. The shape gives the viewer a map; the re-hooks give
 them a reason to stay on it.
 
 - Open a loop early that only a later section closes, and never hold more than two loops
   open at once. Two build pull; a third builds anxiety, and they leave.
-- Re-hook at every section break: touch the pain from the open again, then promise that
+- Re-hook at every section break: touch the pain from the hook again, then promise that
   what's coming is stronger than what they just got. First re-hook by minute two or
   three; four or five across a video is plenty.
 - Order your points second-best first, best second, so the open is strong and slot two
-  delivers past it. The one exception is a ranked-list shape, where you climb to the
+  delivers past it. The one exception is a ranked-list format, where you climb to the
   best last. Never open with your weakest point or with something they already know.
 
 ## Part 3 · The setups (the stake before each section)
 
-Viewers leave at two places: the open, and the setups, the lead-in lines before each
-section. Everyone works the open; almost nobody works the setups.
+Viewers leave at two places: the hook, and the setups, the lead-in lines before each
+section. Everyone works the hook; almost nobody works the setups.
 
 - Before each section, say what's coming and what it costs to skip it, tied to the
   reason they clicked in the first place.

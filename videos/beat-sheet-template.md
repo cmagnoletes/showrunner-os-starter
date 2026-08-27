@@ -1,6 +1,6 @@
 # Beat Sheet — [working title]
 
-Concept #[N] from `channel/concept-shortlist.md` · shape: [ranked list / how-I-did-it /
+Concept #[N] from `channel/concept-shortlist.md` · format: [ranked list / how-I-did-it /
 why-this-fails / this-versus-that]
 The one viewer: [name, from `brand-baseline.md`]
 Why they'll click: [the problem this concept rewards, from the shortlist row]
@@ -8,9 +8,9 @@ Why they'll click: [the problem this concept rewards, from the shortlist row]
 Talking points you speak from, never a script you read. Say the beats your way on
 camera; the structure is what has to survive.
 
-## The cold open (the first 30 seconds)
+## The hook (the first 30 seconds)
 
-Chosen open:
+Chosen hook:
 - [opens on the problem or the stakes, starts with This / So / Here's]
 
 Options considered:
@@ -37,7 +37,7 @@ Setup (the stake): [ ]
 Beats:
 - [ ]
 
-Order per The Hold: second-best first, best second; in a ranked-list shape, climb to the
+Order per The Hold: second-best first, best second; in a ranked-list format, climb to the
 best last instead. Add sections 4 and 5 only if the concept needs them. Never more than
 two loops open at once.
 

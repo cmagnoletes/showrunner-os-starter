@@ -37,11 +37,11 @@ time, and don't make me re-decide anything the shortlist already settled.
 For each concept, work through the four parts of `methods/package/the-hold.md` in order,
 labeling each part as you go so I can watch the doctrine working. The doctrine file is
 the authority: where anything below reads differently, `the-hold.md` wins. Use
-`videos/beat-sheet-template.md` as the shape.
+`videos/beat-sheet-template.md` as the template.
 
-- **The cold open:** draft 3 options per Part 1, each drawn from this concept's evidence
+- **The hook:** draft 3 options per Part 1, each drawn from this concept's evidence
   and my viewer's own words. Recommend one and say why. I pick or rewrite.
-- **The spine:** pick the shape that fits the concept, lay 3 to 5 sections as
+- **The spine:** pick the format that fits the concept, lay 3 to 5 sections as
   talking-point beats ordered per Part 2, and mark the re-hook at every section break.
   Flag it if the loop limit is ever breached.
 - **The setups:** one stake line before each section, built per Part 3. If a hollow
