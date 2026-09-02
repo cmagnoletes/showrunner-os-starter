@@ -166,18 +166,43 @@ def main() -> None:
         transcript_flags = mid_speech_flags(start, end, words)
         post = POST_HANDLE_SENTENCE if r.get("tail") == "sentence" else POST_HANDLE
 
-        # 1. handles
+        # The handles must never swallow a word from the DELETED region: when a
+        # cut retake sits closer to the kept range than the handle is long, the
+        # padding would pull its first word back in. Clamp handles to the
+        # neighboring transcript words before anything else.
+        raw_start, raw_end = start, end
+        prev_word_end = None
+        next_word_start = None
+        for w in words:
+            if w["e"] <= raw_start - 0.05:
+                prev_word_end = w["e"]
+            if next_word_start is None and w["s"] >= raw_end + 0.05:
+                next_word_start = w["s"]
+
+        # 1. handles, clamped to never cross adjacent speech
         start -= PRE_HANDLE
         end += post
+        if prev_word_end is not None:
+            start = max(start, prev_word_end + 0.04)
+        if next_word_start is not None:
+            end = min(end, next_word_start - 0.04)
 
         # 2. snap each boundary to silence, searching only the discarded side
-        start = snap_to_silence(start, rms, rms_fps,
-                                max(prev_end, start - SEARCH_WINDOW), start)
+        #    (bounded by the same adjacent-word clamps)
+        snap_floor = max(prev_end, start - SEARCH_WINDOW)
+        if prev_word_end is not None:
+            snap_floor = max(snap_floor, prev_word_end + 0.04)
+        start = snap_to_silence(start, rms, rms_fps, snap_floor, start)
         next_start = float(ranges[idx + 1]["start"]) if idx + 1 < len(ranges) else duration
-        end = snap_to_silence(end, rms, rms_fps, end,
-                              min(next_start, end + SEARCH_WINDOW))
+        snap_ceil = min(next_start, end + SEARCH_WINDOW)
+        if next_word_start is not None:
+            snap_ceil = min(snap_ceil, next_word_start - 0.04)
+        end = snap_to_silence(end, rms, rms_fps, end, snap_ceil)
         start = max(0.0, start)
         end = min(duration, end)
+        if end <= start:
+            fail(f"range {idx} collapsed after clamping ({r.get('label', '')}) — "
+                 "the kept range is too close to deleted speech on both sides")
 
         # 3. QC flags
         flags = list(transcript_flags)
