@@ -26,11 +26,44 @@ You start today with the foundation itself: **the distillation of your brand**, 
 | `methods/package/beat-sheet-prompt.md` | The Beat Sheet method. Turns shortlist concepts into recordable outlines, batch-first. |
 | `videos/beat-sheet-template.md` | The shape of each video's beat sheet. One folder per video: `videos/001/`, `002/`… |
 | `channel/home-studio.md` | The five-minute pre-shoot checklist. The full [Home Studio Guide](https://carlosmagno.me/home-studio-guide.pdf) is a PDF. |
+| `methods/package/assembly-line-fast-track-prompt.md` | The Fast Tracked Assembly Line. Turns your raw takes into finished cuts. |
+| `.claude/skills/assembly-line-fast-track/` | The editing pipeline: local transcription, safe cuts, a DaVinci Resolve timeline, render. |
+| `videos/edit-plan-template.md` | The shape of each video's edit plan — the document you approve before anything is cut. |
 
-**Session 3 turned the system toward recording.** The Showrunner OS now holds the
-retention doctrine as a file (The Hold), the method that applies it to your shortlist
-(the Beat Sheet), the per-video folder structure, and your home-studio reference. Same
-repo, same foundation, one more part each session.
+**Session 4 turns the system toward editing.** The Showrunner OS now edits with you:
+it reads your raw take's transcript, proposes the trims in writing, waits for your
+approval, assembles the cut in DaVinci Resolve (the free edition — the whole editing
+stack is free), and renders when you've watched it and called it good. Same repo, same
+foundation, one more part each session.
+
+### How to run Session 4
+
+One-time install first (about 20 to 30 minutes, once): download the **free** DaVinci
+Resolve from [blackmagicdesign.com/products/davinciresolve](https://www.blackmagicdesign.com/products/davinciresolve)
+and install it — that's the only manual install; everything else is handled for you.
+
+Have your repo from Sessions 1 to 3? Update it — open Claude Code inside your repo
+folder and tell it:
+
+> Fetch `methods/package/assembly-line-fast-track-prompt.md`, the whole
+> `.claude/skills/assembly-line-fast-track/` folder (including all of `scripts/`),
+> `videos/edit-plan-template.md`, and the updated `CLAUDE.md` from
+> https://github.com/cmagnoletes/showrunner-os-starter and add them to this repo,
+> then commit.
+
+Then run the Fast Tracked Assembly Line with one instruction:
+
+> Read `methods/package/assembly-line-fast-track-prompt.md` and run it on me. My raw
+> recordings from Session 3 are at &lt;folder or file path&gt;.
+
+The first run walks you through setup (it installs the free tools and wires DaVinci
+Resolve to your AI; you'll restart Claude Code once). Every editing session starts
+with a three-step ritual it will hold you to: open Resolve, open your project, click
+**Workspace > Scripts > resolve_bridge**. Then it transcribes, shows you the edit plan
+in writing — **you approve it before a single cut is made** — assembles the timeline
+in Resolve, lets you scrub it and ask for changes in plain language, and renders.
+**Done means one of your Week 3 videos rendered, captioned, and logged** — ideally all
+of them, batch style.
 
 ### How to run Session 3
 
@@ -194,9 +227,8 @@ next session — you'll just be moving a file you already have.
 
 ## What happens next
 
-Session 4 is the edit: turning the raw takes you just recorded into finished videos, so
-bring your footage. Packaging (the thumbnail and title craft) comes right after, on the
-runway to publishing. Every session adds one more working part to the same repo: same
+Session 5 is packaging: the thumbnail and title craft (The Marquee), on the runway to
+publishing. Every session adds one more working part to the same repo: same
 foundation, growing machine. You're never cold-starting; you're activating the
 Showrunner OS you already have.
 
