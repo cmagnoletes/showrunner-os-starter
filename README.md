@@ -41,6 +41,11 @@ foundation, one more part each session.
 One-time install first (about 20 to 30 minutes, once): download the **free** DaVinci
 Resolve from [blackmagicdesign.com/products/davinciresolve](https://www.blackmagicdesign.com/products/davinciresolve)
 and install it — that's the only manual install; everything else is handled for you.
+On the download page pick the plain **"DaVinci Resolve"** button (the free one, NOT
+"DaVinci Resolve Studio"); Blackmagic asks for a short registration form, which is
+normal. After installing, **open Resolve once** and click through its first-run
+questions, so it's ready before the method runs. (Windows: wherever a command below
+says `python3`, type `python` instead.)
 
 Have your repo from Sessions 1 to 3? Update it — open Claude Code inside your repo
 folder and tell it:

@@ -109,8 +109,18 @@ def main() -> None:
         if installed:
             ok("ffmpeg installed (open a NEW terminal if it is not found later)")
         else:
-            warn("could not install ffmpeg automatically. Install it from "
-                 "ffmpeg.org/download.html and run setup again.")
+            if IS_MAC:
+                warn("could not install ffmpeg automatically. Install Homebrew "
+                     "first (one command, from https://brew.sh), then run setup "
+                     "again and it handles the rest.")
+            elif IS_WIN:
+                warn("could not install ffmpeg automatically. Download the "
+                     "'ffmpeg-release-essentials' build from "
+                     "https://www.gyan.dev/ffmpeg/builds/ , unzip it, and add its "
+                     "bin folder to PATH — or install winget and run setup again.")
+            else:
+                warn("install ffmpeg with your package manager (e.g. "
+                     "sudo apt install ffmpeg) and run setup again.")
             steps_failed.append("ffmpeg")
 
     # ------------------------------------------------------------------ 3
