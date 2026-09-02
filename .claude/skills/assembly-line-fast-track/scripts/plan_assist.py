@@ -19,8 +19,8 @@ from pathlib import Path
 
 FILLER = re.compile(r"^(um+|uh+|uhm+|ah+|ahm+|er+|erm+|hm+|hmm+|ugh+)[,.!?]?$",
                     re.IGNORECASE)
-GAP_SEC = 1.2          # silences longer than this get listed
-STRETCH_SEC = 1.0      # single words longer than this are suspects
+GAP_SEC = 1.0          # silences longer than this get listed
+STRETCH_SEC = 0.8      # single words longer than this are suspects
 REPEAT_WINDOW = 30.0   # a 4-word phrase recurring within this window = retake candidate
 
 
