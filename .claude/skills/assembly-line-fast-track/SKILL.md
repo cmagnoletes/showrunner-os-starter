@@ -38,10 +38,11 @@ python3 .claude/skills/assembly-line-fast-track/scripts/doctor.py
 All PASS: continue. Any FAIL: follow the fix lines top to bottom. If setup was never
 run, run `python3 .claude/skills/assembly-line-fast-track/scripts/setup.py`, have the
 owner do any manual step it names (installing DaVinci Resolve is one), then doctor
-again. After a first-ever setup, the owner must restart Claude Code / Codex once so the
-new Resolve MCP server loads. Windows: every `python3` in this skill is `python`, and
-the venv paths use `Scripts\python.exe`. Never assume a tool exists — doctor is the
-source of truth, and setup is safe to rerun after every fix.
+again. No restart is needed: the pipeline's scripts talk to Resolve directly through
+the bridge — nothing gets registered into Claude Code or Codex. Windows: every
+`python3` in this skill is `python`, and the venv paths use `Scripts\python.exe`.
+Never assume a tool exists — doctor is the source of truth, and setup is safe to
+rerun after every fix.
 
 ### 1. Locate the footage
 

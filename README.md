@@ -62,7 +62,7 @@ Then run the Fast Tracked Assembly Line with one instruction:
 > recordings from Session 3 are at &lt;folder or file path&gt;.
 
 The first run walks you through setup (it installs the free tools and wires DaVinci
-Resolve to your AI; you'll restart Claude Code once). Every editing session starts
+Resolve to your AI — no restarts, no extra accounts). Every editing session starts
 with a three-step ritual it will hold you to: open Resolve, open your project, click
 **Workspace > Scripts > resolve_bridge**. Then it transcribes, shows you the edit plan
 in writing — **you approve it before a single cut is made** — assembles the timeline

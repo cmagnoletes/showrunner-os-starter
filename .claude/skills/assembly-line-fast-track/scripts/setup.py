@@ -160,14 +160,16 @@ def main() -> None:
             else:
                 ok("MCP server downloaded")
         if (MCP_HOME / "install.py").exists():
-            print("    wiring it into Claude Code and Codex (takes a minute)...",
-                  flush=True)
-            r = run([py, "install.py", "--clients", "claude-code,codex",
+            print("    installing its environment (takes a minute)...", flush=True)
+            # --clients manual: the pipeline's scripts talk to Resolve through
+            # the bridge directly, so nothing needs to be registered into
+            # Claude Code or Codex (and no restart is needed).
+            r = run([py, "install.py", "--clients", "manual",
                      "--update-policy", "never"], cwd=str(MCP_HOME))
             if r.returncode == 0:
-                ok("MCP server installed and registered")
+                ok("Resolve control layer installed")
             else:
-                warn("MCP installer reported a problem. Tail of its output:\n    "
+                warn("its installer reported a problem. Tail of its output:\n    "
                      + (r.stdout + r.stderr).strip()[-400:])
                 steps_failed.append("mcp-install")
 
@@ -232,8 +234,7 @@ def main() -> None:
   2. Open (or create) your project.
   3. Menu bar: Workspace > Scripts > resolve_bridge   (starts the connection)
 
-Then restart Claude Code / Codex once so it picks up the new MCP server,
-and you are ready to edit.""")
+That's it — you are ready to edit.""")
 
 
 if __name__ == "__main__":
