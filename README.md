@@ -159,8 +159,8 @@ Open the harness **inside this folder** and point it at the prompt. Pick your ha
 ### Claude Code
 
 ```bash
-# install once (Node 18+):
-npm install -g @anthropic-ai/claude-code
+# install once (no dependencies needed):
+curl -fsSL https://claude.ai/install.sh | bash
 
 # from inside your repo folder:
 claude
