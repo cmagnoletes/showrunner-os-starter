@@ -43,7 +43,9 @@ def main() -> None:
           "run: python3 .claude/skills/assembly-line-fast-track/scripts/setup.py")
 
     check("ffmpeg", shutil.which("ffmpeg") is not None,
-          "run setup again, or install from ffmpeg.org")
+          "run setup again; on a Mac without Homebrew, install Homebrew from "
+          "brew.sh first; on Windows use the gyan.dev/ffmpeg/builds "
+          "'release-essentials' zip")
 
     venv_python = Path(cfg.get("venv_python", BASE / "venv/bin/python"))
     stable_ok = False

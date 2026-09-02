@@ -69,15 +69,34 @@ transcript).
 
 ### 3. Build the edit plan (your judgment, in writing)
 
-Read the transcript (`.txt` for flow, `.words.json` for timing). Decide what stays.
+FIRST, run the defect inventory - it enumerates every filler word, long silence,
+stretched word, and repeated-take candidate with timestamps:
+
+```
+~/.showrunner-os/venv/bin/python .claude/skills/assembly-line-fast-track/scripts/plan_assist.py \
+  videos/00X/<name>.words.json
+```
+
+**Every line of that inventory must appear in the edit plan, dispositioned:
+cut, or kept with a stated reason.** Never skip an item silently - a missed
+"um" the owner has to point out three times is a failed plan. When the owner
+later says "remove all of those", the inventory IS the complete list; re-check
+every FILLER line against the ranges, not just the first one you find.
+
+Then read the transcript (`.txt` for flow, `.words.json` for timing) and decide
+what stays.
 
 **The cut rules:**
 - **Repeated takes:** keep the LAST good take of a repeated line unless the owner has
   said otherwise. Week 3 recording style leaves every retake in; the last one is
   almost always the keeper.
 - **Filler and false starts:** cut obvious "um"/"uh" islands, abandoned sentence
-  starts, and long dead air. Leave natural breaths and thinking pauses that carry the
-  owner's rhythm; this is a person, not a supercut.
+  starts, long dead air, and any "start of take" or "end of take" chatter ("okay,
+  here we go", "cut, how do I stop this") - meta-commentary about the recording is
+  never content. Leave natural breaths and thinking pauses that carry the owner's
+  rhythm; this is a person, not a supercut. Mid-sentence fillers default to KEEP
+  (cutting them risks choppy joins), but each one must be listed at Gate 1 so the
+  owner decides once, for all of them.
 - **Stammer suspects:** any word whose timestamps span more than 1 second is a suspect
   (stretched delivery reads as one long token). List every one in the plan for the
   owner to confirm; do not silently cut them.
@@ -162,7 +181,10 @@ Re-transcribe the rendered file (step 2's command, `--out videos/00X/final/`).
 ### 8. Log and commit
 
 Write `videos/00X/edit-log.md`: what was cut and why, stage timings, flags raised and
-how they were resolved, render path. Commit the video folder (never the media files).
+how they were resolved, render path. Before committing, check `git config user.name`;
+on a fresh machine it is unset - ask the owner for the name and email they use on
+GitHub and set both with `git config user.name/user.email` so their commits carry
+their identity. Then commit the video folder (never the media files).
 
 ## When something breaks
 
