@@ -24,9 +24,13 @@ version, so nothing is ever lost and nothing starts over.
 - `methods/` — the prompts you run and the doctrine files they read, grouped by Loop beat
   (signal / package / publish / scale). `package/the-hold.md` is the retention doctrine; every
   beat sheet derives from it.
-- `.claude/skills/` — working tools Claude Code runs itself. Viewer Soul lives here.
-- `videos/` — one folder per video (`001/`, `002/`…), each holding that video's beat sheet now,
-  its packaging and reads in later sessions. `videos/beat-sheet-template.md` is the template.
+- `.claude/skills/` — working tools Claude Code runs itself. Viewer Soul and the Fast
+  Tracked Assembly Line (the editing pipeline) live here.
+- `videos/` — one folder per video (`001/`, `002/`…), each holding that video's beat sheet,
+  edit plan, and edit log; its packaging and reads come in later sessions.
+  `videos/beat-sheet-template.md` and `videos/edit-plan-template.md` are the templates.
+  Raw recordings and renders stay OUTSIDE this repo; only plans, transcripts, and logs
+  are committed.
 
 ## The operating model (the Loop)
 
