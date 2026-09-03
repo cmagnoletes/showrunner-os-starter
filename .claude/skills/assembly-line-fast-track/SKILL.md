@@ -50,6 +50,25 @@ Ask which video this session edits. The raw recording stays wherever it lives (n
 copy it into this repo). The video's folder here (`videos/001/`, `002/`...) receives
 every pipeline file. Confirm both paths with the owner.
 
+**Multiple raw files for one video** (the camera was stopped between attempts —
+common with phones): stitch them into ONE working file first, then run the whole
+pipeline on that file. Confirm the order with the owner (usually filename or
+recording-time order), then:
+
+```
+printf "file '%s'\n" /path/one.mov /path/two.mov > /tmp/join.txt
+ffmpeg -f concat -safe 0 -i /tmp/join.txt -c copy "<same-folder>/joined-take.mov"
+```
+
+Stream-copy works when the clips came from the same camera with the same settings.
+If ffmpeg complains or the clips differ (mixed devices, orientations, frame rates),
+re-encode instead: replace `-c copy` with `-c:v libx264 -preset fast -c:a aac -r 60`.
+The joined file lives beside the sources, never in the repo; list the source files
+in the edit plan and the edit log. Everything downstream (transcript, plan, cuts,
+timeline) then works on the joined file exactly as with a single take — including
+retakes that span clip boundaries. Screen recordings plus camera as separate angles
+are NOT this: that's multi-track editing, out of the fast track's scope.
+
 ### 2. Transcribe (deterministic)
 
 ```
