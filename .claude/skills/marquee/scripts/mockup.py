@@ -88,9 +88,10 @@ def build(thumb, title, channel, neighbors_dir):
     .t{font-weight:500;font-size:15px;line-height:1.35;max-height:2.7em;overflow:hidden}
     .c{color:#aaa;font-size:13px;margin-top:4px}
     .mine .thumb{outline:2px solid #ffd54f;outline-offset:2px}
-    .watch{display:grid;grid-template-columns:1fr 412px;gap:24px;padding:0 24px;max-width:1280px}
+    .watch{display:grid;grid-template-columns:minmax(0,1fr) 412px;gap:24px;padding:0 24px;max-width:1280px;align-items:start}
     .player{aspect-ratio:16/9;background:#000;border-radius:12px}
-    .side .card{flex-direction:row;gap:8px;margin-bottom:8px}
+    .side .card{flex-direction:row;gap:8px;margin-bottom:8px;min-width:0}
+    .side .meta>div{min-width:0}
     .side .thumb{width:248px;flex:none;border-radius:8px}
     .side .avatar{display:none}
     .side .t{font-size:14px}
