@@ -93,8 +93,16 @@ Then stop. The owner goes and builds it.
 
 Before reading the image, ask two things and record the answers: is this a photo of
 you, unaltered (a cutout and color treatment are fine; a generated, swapped, or
-borrowed face is not), and was it shot to the brief. Then read the image file the
-owner points you at and apply `references/rubric.md` in order:
+borrowed face is not), and was it shot to the brief. Then check the photo file's own
+metadata, because a generated face can look real to the eye:
+
+```
+python3 -c "import sys,re;d=open(sys.argv[1],'rb').read();print([m for m in ['c2pa','synthid','trainedalgorithmicmedia','generative ai','midjourney','dall-e','stable diffusion','firefly'] if m in d.lower().decode('latin1')] or 'no generation markers')" "<path-to-photo>"
+```
+
+Any marker found is the "generated, altered, or borrowed face" red flag, whatever the
+owner said; stop and say so. Then read the image file the owner points you at and
+apply `references/rubric.md` in order:
 
 1. The one-second glance: say what the video is about from the image alone.
 2. Score the eleven criteria, 1 to 5 each, total out of 55.
