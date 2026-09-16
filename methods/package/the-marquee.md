@@ -69,8 +69,10 @@ title; it builds the other half of the package.
   bottom-right corner belongs to YouTube's timestamp; keep it empty.
 - Bold sans-serif, your brand font, high contrast against the background. One accent
   color, spent on the one word that carries the payoff, nowhere else.
-- Judge it at 168 pixels wide (the sidebar) and at 120 (the phone), never at full size.
-  If the words or the face fall apart small, they fail.
+- Judge it at 168 pixels wide and at 120, never at full size. Both are smaller than
+  anything YouTube serves on desktop (the watch page's suggested column renders about 248
+  wide), so words that hold there hold everywhere. If the words or the face fall apart
+  small, they fail.
 - Judge it in the feed, next to other thumbnails, never alone on a white canvas.
 
 ## Part 5 · The gate (grade before you upload)

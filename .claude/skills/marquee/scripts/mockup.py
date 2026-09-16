@@ -88,10 +88,10 @@ def build(thumb, title, channel, neighbors_dir):
     .t{font-weight:500;font-size:15px;line-height:1.35;max-height:2.7em;overflow:hidden}
     .c{color:#aaa;font-size:13px;margin-top:4px}
     .mine .thumb{outline:2px solid #ffd54f;outline-offset:2px}
-    .watch{display:grid;grid-template-columns:1fr 402px;gap:24px;padding:0 24px;max-width:1280px}
+    .watch{display:grid;grid-template-columns:1fr 412px;gap:24px;padding:0 24px;max-width:1280px}
     .player{aspect-ratio:16/9;background:#000;border-radius:12px}
     .side .card{flex-direction:row;gap:8px;margin-bottom:8px}
-    .side .thumb{width:168px;flex:none;border-radius:8px}
+    .side .thumb{width:248px;flex:none;border-radius:8px}
     .side .avatar{display:none}
     .side .t{font-size:14px}
     .search .card{flex-direction:row;gap:16px;max-width:1096px;margin:0 24px 16px}
@@ -109,15 +109,15 @@ def build(thumb, title, channel, neighbors_dir):
     <style>{css}</style></head><body>
     <h2>Home feed</h2><p class="note">Yours has the yellow outline. Judge it next to the neighbors, not alone.</p>
     <div class="home">{render(home)}</div>
-    <h2>Watch page · suggested column (168 px)</h2>
+    <h2>Watch page · suggested column (248 px, as YouTube renders it on a 1440 px screen)</h2>
     <div class="watch"><div class="player"></div><div class="side">{render(side)}</div></div>
     <h2>Search results</h2><div class="search">{render(search)}</div>
     <h2>Phone (390 px wide)</h2><div class="phone">{render(phone)}</div>
     <h2>Glance strip</h2><p class="note">If the words or the face fall apart here, that is the fix.</p>
     <div class="strip">
       <figure><img src="{data_uri(thumb)}" width="336"><figcaption>336 px</figcaption></figure>
-      <figure><img src="{data_uri(thumb)}" width="168"><figcaption>168 px · sidebar</figcaption></figure>
-      <figure><img src="{data_uri(thumb)}" width="120"><figcaption>120 px · phone</figcaption></figure>
+      <figure><img src="{data_uri(thumb)}" width="168"><figcaption>168 px · test size</figcaption></figure>
+      <figure><img src="{data_uri(thumb)}" width="120"><figcaption>120 px · stress test</figcaption></figure>
       <figure><img src="{data_uri(thumb)}" width="88"><figcaption>88 px · squint</figcaption></figure>
     </div></body></html>"""
     return doc
