@@ -31,7 +31,7 @@ You start today with the foundation itself: **the distillation of your brand**, 
 | `videos/edit-plan-template.md` | The shape of each video's edit plan — the document you approve before anything is cut. |
 | `methods/package/the-marquee.md` | The packaging doctrine: two shots, one promise. Every thumbnail is judged by it. |
 | `methods/package/marquee-prompt.md` | The Marquee. Writes the thumbnail words with you, briefs the photo, grades what you built. |
-| `.claude/skills/marquee/` | The word engine, the six simple archetypes with real examples, the 55-point grader, the feed mockup. |
+| `.claude/skills/marquee/` | The word engine, the four simple archetypes with real examples, the 55-point grader, the feed mockup. |
 | `videos/marquee-template.md` | The shape of each video's packaging record: archetype, words, grade card, preview. |
 
 **Session 5 packages the video for the click.** The Showrunner OS now writes the
@@ -57,7 +57,7 @@ Then run The Marquee on each video you committed to, one instruction each:
 
 > Read `methods/package/marquee-prompt.md` and run it on me for `videos/001/`.
 
-It shows you six simple thumbnail shapes with real examples and you pick one. It
+It shows you four simple thumbnail shapes with real examples and you pick one. It
 writes the word candidates from your locked title and your beat sheet and you pick or
 rewrite. It briefs the photo (phone, window light, five expressions in a minute) and
 the build (free cutout, then Canva or Photopea, 1280 by 720, your brand font and

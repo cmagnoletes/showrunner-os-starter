@@ -1,17 +1,17 @@
-# The six simple archetypes
+# The four simple archetypes
 
 A thumbnail archetype is a proven shape. You pick one by looking at the examples, then
-build yours inside its anatomy. All six below are "one real photo of you, plus a few
+build yours inside its anatomy. All four below are "one real photo of you, plus a few
 words" shapes: no compositing, no illustration, no second subject. They come from a
-larger library of 28; these are the ones a founder can build in under an hour on free
-tools. Every example is a public channel; open them and look at how the shape works
+larger library of 28, and they keep the library's names; these four are the ones a founder
+can build in under an hour on free tools with one photo. Every example is a public channel; open them and look at how the shape works
 at small size before you build.
 
 Pick by asking: what does my beat sheet pay off, and what can my photo carry?
 
 ---
 
-## 1 · Face  `TA-FACE`
+## 1 · Close-Up Expressive Face (Solo Reaction)  `TA-FACE`
 
 **Shape:** your face fills 40 to 60 percent of the frame with one legible, honest
 expression, hard-separated from a plain or blurred background. Zero to three words.
@@ -39,7 +39,7 @@ longer the single dominant element.
 
 ---
 
-## 2 · Face + Object  `TA-FACEOBJ`
+## 2 · Face + Object (Three-Element Signature)  `TA-FACEOBJ`
 
 **Shape:** your reacting face plus one object the video is about. Three elements at
 most: face, object, optional words.
@@ -63,52 +63,7 @@ object.
 
 ---
 
-## 3 · Big Number  `TA-BIGNUMBER`
-
-**Shape:** one number (or one charged word) is the largest element in the frame, with
-two or three words of context and, optionally, your face smaller in the lower third.
-
-**Use when:** the beat sheet contains a specific, surprising figure: a cost, a count,
-a duration, a percentage. Specific beats round ("$47,382" reads truer than "$50,000").
-
-**Anatomy:** the number in the left two-thirds, 30 to 50 percent of frame height,
-ultra-bold, high contrast (white or yellow on dark; red only for loss or danger).
-Context words below it, a third of its size. Face, if used, lower-right and smaller
-than the number, gaze toward it.
-
-**Examples:** Ryan Trahan, "I Survived On $0.01 For 30 Days"
-(youtube.com/watch?v=JEqi3VVLYkg): the tiny specific figure is the hook, the face is
-secondary. MrBeast, "Last To Leave Circle Wins $500,000"
-(youtube.com/watch?v=zxYjTTXc-J8).
-
-**Fails when:** the number is not the largest element; the context becomes a sentence;
-the number is a promise the video never pays off.
-
----
-
-## 4 · Text-Dominant  `TA-TEXTDOM`
-
-**Shape:** two to four bold words treated like a film title card, embedded in a
-cinematic or moody photo, separated by a gradient, never boxed.
-
-**Use when:** the video is a declaration or an essay with a position: "I'm done",
-"We need to talk", "This changed everything". The statement is the hook and it must
-read incomplete on its own.
-
-**Anatomy:** the photo must look finished with the words removed (the removal test).
-Words in the left two-thirds, large, ultra-bold, contrast-only legibility (no heavy
-stroke, no drop shadow). Subject on a rule-of-thirds intersection, right of center.
-
-**Examples:** Johnny Harris, "Why you're so tired" (youtube.com/watch?v=gzLPa6NbcrE):
-"ALWAYS TIRED" embedded in a moody portrait. Johnny Harris, "The Problem With Elon
-Musk" (youtube.com/watch?v=WYQxG4KEzvo): "WHO IS HE REALLY?" in a graded scene.
-
-**Fails when:** more than four words; a complete sentence; the words repeat the title;
-a photo that only works because of the words; a default font.
-
----
-
-## 5 · Jeopardy  `TA-JEOPARDY`
+## 3 · Jeopardy (Thumbnail = Answer, Title = Question)  `TA-JEOPARDY`
 
 **Shape:** the title asks a yes-or-no question; the thumbnail is the blunt answer
 (NO, YES, a number), often with a small asterisk that promises a catch. Your face
@@ -131,7 +86,7 @@ thumbnail.
 
 ---
 
-## 6 · Minimal  `TA-MINIMAL`
+## 4 · Neo-Minimalism & Anti-Thumbnail  `TA-MINIMAL`
 
 **Shape:** one subject, two colors, half the frame empty, no arrows, no shapes, zero to
 three words. Light register (white, open, aspirational) for education and finance;
@@ -161,11 +116,9 @@ is already minimal.
 |---|---|
 | a feeling, a warning, a confession | Face |
 | a thing (document, device, object) | Face + Object |
-| a specific number | Big Number |
-| a position or a declaration | Text-Dominant |
 | a yes-or-no the audience gets wrong | Jeopardy |
 | calm authority in a loud niche | Minimal |
 
-Two more shapes exist in the wider library for when you outgrow these (Curiosity Gap,
-Before/After); they need a second image or a composite and are not part of this
-session.
+The wider library holds 24 more shapes (Big Number, Text-Dominant, Before/After,
+Curiosity Gap and so on) for when you outgrow these; they need a second image, a
+number the video pays off, or a composite, and they are not part of this session.

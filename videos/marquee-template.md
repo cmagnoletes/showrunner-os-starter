@@ -4,7 +4,7 @@
 
 ## Archetype
 
-- **Picked:** [TA-FACE / TA-FACEOBJ / TA-BIGNUMBER / TA-TEXTDOM / TA-JEOPARDY / TA-MINIMAL]
+- **Picked:** [TA-FACE / TA-FACEOBJ / TA-JEOPARDY / TA-MINIMAL]
 - **Why this one for this video:** [two sentences]
 - **Modeled after:** [the example from the library you looked at]
 

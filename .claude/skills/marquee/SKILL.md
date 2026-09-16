@@ -1,6 +1,6 @@
 ---
 name: marquee
-description: The Marquee. Packages one video for the click: picks a simple thumbnail archetype from the library, writes the thumbnail words with the owner (two to five words, never the title's words, three lenses: curiosity, impact, controversy), writes the shot brief, then grades the owner's exported thumbnail against an 11-criterion rubric and renders YouTube-feed mockups so it is judged at real sizes. Use when the owner says "package this video", "thumbnail for 001", "run the marquee", "what should the thumbnail say", or brings a thumbnail PNG to grade. Title is locked; never edited here. No AI-generated faces, ever.
+description: The Marquee. Packages one video for the click: picks one of four simple thumbnail archetypes from the library, writes the thumbnail words with the owner (two to five words, never the title's words, three lenses: curiosity, impact, controversy), writes the shot brief, then grades the owner's exported thumbnail against an 11-criterion rubric and renders YouTube-feed mockups so it is judged at real sizes. Use when the owner says "package this video", "thumbnail for 001", "run the marquee", "what should the thumbnail say", or brings a thumbnail PNG to grade. Title is locked; never edited here. No AI-generated faces, ever.
 ---
 
 # The Marquee (starter)
@@ -17,7 +17,7 @@ judge the result.
 - the video's row in `channel/concept-shortlist.md` (locked title, angle, problem)
 - `videos/00X/beat-sheet.md` (what the video says; the words must be true to it)
 - `methods/package/the-marquee.md` (the doctrine; it wins over anything below)
-- `references/archetypes.md` (the six simple shapes, with real examples)
+- `references/archetypes.md` (the four simple shapes, with real examples)
 - `references/rubric.md` (the grade)
 - `scripts/mockup.py` (feed mockups; Python 3 standard library only, no install)
 
@@ -41,7 +41,7 @@ pays off (the third sign, the trick, the number). Those three lines drive everyt
 
 ### 2. The archetype (the owner picks by looking)
 
-Show the six archetypes from `references/archetypes.md` as a short table: name, the
+Show the four archetypes from `references/archetypes.md` as a short table: name, the
 one-line shape, and one real example link each. Recommend one for this video in two
 sentences (which shape fits the beat sheet's payoff and the owner's photo situation).
 The owner picks. From here on, every decision lives inside that archetype's anatomy.

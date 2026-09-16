@@ -31,7 +31,7 @@ everything:
 ## Step 1 · The video and the archetype
 
 Ask which video we're packaging (`videos/001/`, `002/`...). Pull its shortlist row and
-its beat sheet. Then show me the six simple archetypes from
+its beat sheet. Then show me the four simple archetypes from
 `.claude/skills/marquee/references/archetypes.md`, each with its one-line shape and
 its real examples, recommend one for this video and say why in two sentences. I pick.
 Everything after this is built inside that archetype's anatomy.
