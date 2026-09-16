@@ -29,6 +29,42 @@ You start today with the foundation itself: **the distillation of your brand**, 
 | `methods/package/assembly-line-fast-track-prompt.md` | The Fast Tracked Assembly Line. Turns your raw takes into finished cuts. |
 | `.claude/skills/assembly-line-fast-track/` | The editing pipeline: local transcription, safe cuts, a DaVinci Resolve timeline, render. |
 | `videos/edit-plan-template.md` | The shape of each video's edit plan — the document you approve before anything is cut. |
+| `methods/package/the-marquee.md` | The packaging doctrine: two shots, one promise. Every thumbnail is judged by it. |
+| `methods/package/marquee-prompt.md` | The Marquee. Writes the thumbnail words with you, briefs the photo, grades what you built. |
+| `.claude/skills/marquee/` | The word engine, the six simple archetypes with real examples, the 55-point grader, the feed mockup. |
+| `videos/marquee-template.md` | The shape of each video's packaging record: archetype, words, grade card, preview. |
+
+**Session 5 packages the video for the click.** The Showrunner OS now writes the
+thumbnail words with you (two to five words, never the title's words, three lenses:
+curiosity, impact, controversy), tells you exactly what photo to shoot, and grades the
+thumbnail you build by hand on free tools until it is ready to upload. It also renders
+a fake YouTube feed so you judge it at real sizes, next to other videos. The title
+stays locked from Session 2; the thumbnail is the other shot.
+
+### How to run Session 5
+
+Have your repo from Sessions 1 to 4? Update it — open Claude Code inside your repo
+folder and tell it:
+
+> Fetch `methods/package/the-marquee.md`, `methods/package/marquee-prompt.md`, the
+> whole `.claude/skills/marquee/` folder (including `references/` and `scripts/`),
+> `videos/marquee-template.md`, the updated `videos/README.md`,
+> `channel/concept-shortlist-template.md`, and the updated `CLAUDE.md` from
+> https://github.com/cmagnoletes/showrunner-os-starter and add them to this repo,
+> then commit.
+
+Then run The Marquee on each video you committed to, one instruction each:
+
+> Read `methods/package/marquee-prompt.md` and run it on me for `videos/001/`.
+
+It shows you six simple thumbnail shapes with real examples and you pick one. It
+writes the word candidates from your locked title and your beat sheet and you pick or
+rewrite. It briefs the photo (phone, window light, five expressions in a minute) and
+the build (free cutout, then Canva or Photopea, 1280 by 720, your brand font and
+colors). You build it. You drop the PNG back in and it grades it out of 55 with six
+pass-or-fail tests and one targeted fix, then renders the feed preview. **Done means
+one thumbnail per committed video, graded 42 or more, status `packaged`.** No design
+software to buy; no AI faces, ever.
 
 **Session 4 turns the system toward editing.** The Showrunner OS now edits with you:
 it reads your raw take's transcript, proposes the trims in writing, waits for your
@@ -234,8 +270,8 @@ next session — you'll just be moving a file you already have.
 
 ## What happens next
 
-Session 5 is packaging: the thumbnail and title craft (The Marquee), on the runway to
-publishing. Every session adds one more working part to the same repo: same
+Session 6 publishes: the upload, the first 48-hour read, and the verdict (double down,
+kill, or iterate). Every session adds one more working part to the same repo: same
 foundation, growing machine. You're never cold-starting; you're activating the
 Showrunner OS you already have.
 

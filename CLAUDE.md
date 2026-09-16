@@ -23,11 +23,13 @@ version, so nothing is ever lost and nothing starts over.
   swipe file) plus standing references like `home-studio.md`, the recording setup.
 - `methods/` — the prompts you run and the doctrine files they read, grouped by Loop beat
   (signal / package / publish / scale). `package/the-hold.md` is the retention doctrine; every
-  beat sheet derives from it.
-- `.claude/skills/` — working tools Claude Code runs itself. Viewer Soul and the Fast
-  Tracked Assembly Line (the editing pipeline) live here.
+  beat sheet derives from it. `package/the-marquee.md` is the packaging doctrine; every
+  thumbnail is judged by it.
+- `.claude/skills/` — working tools Claude Code runs itself. Viewer Soul, the Fast
+  Tracked Assembly Line (the editing pipeline), and the Marquee (thumbnail words,
+  grader, feed mockup) live here.
 - `videos/` — one folder per video (`001/`, `002/`…), each holding that video's beat sheet,
-  edit plan, and edit log; its packaging and reads come in later sessions.
+  edit plan, edit log, and marquee (packaging record); reads come in a later session.
   `videos/beat-sheet-template.md` and `videos/edit-plan-template.md` are the templates.
   Raw recordings and renders stay OUTSIDE this repo; only plans, transcripts, and logs
   are committed.
