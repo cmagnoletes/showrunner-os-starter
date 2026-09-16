@@ -66,7 +66,8 @@ title; it builds the other half of the package.
 - The face fills 40 to 60 percent of the frame, separated hard from the background
   (blur, solid color, or a cutout on your brand color).
 - Words in the left two-thirds, upper or lower band, clear of the face. The
-  bottom-right corner belongs to YouTube's timestamp; keep it empty.
+  bottom-right corner belongs to YouTube's duration badge; keep your words and your
+  face out of it (a shoulder or the background touching it is fine).
 - Bold sans-serif, your brand font, high contrast against the background. One accent
   color, spent on the one word that carries the payoff, nowhere else.
 - Judge it at 168 pixels wide and at 120, never at full size. Both are smaller than

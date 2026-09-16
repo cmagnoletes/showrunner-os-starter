@@ -20,7 +20,7 @@ If you can't, stop and revise before scoring anything.
 | 4 | Curiosity gap | Does it withhold enough to force a click? Does it raise a question without answering it? | High |
 | 5 | Title-thumbnail split | Do the title and the thumbnail carry different, complementary information? | High |
 | 6 | Emotion authenticity | Is the expression genuine, legible, and matched to the video's real tone? | Medium |
-| 7 | Mobile legibility | At 168 and 120 pixels wide, do the words read and the subject hold? Is the right third and the bottom-right corner clear? | Medium |
+| 7 | Mobile legibility | At 168 and 120 pixels wide, do the words read and the subject hold? Are the words out of the right third, and are the words and the face out of the bottom-right corner where YouTube's duration badge sits? (Clothing or background touching that corner is not a miss.) | Medium |
 | 8 | Watch-time honesty | Does the video deliver what the thumbnail implies, early? | Medium |
 | 9 | Brand consistency | Would this be recognized as the channel's without the name (font, colors, treatment)? | Medium |
 | 10 | Authenticity / realism | Does it read as real, not over-polished, not AI-typical? | Lower |
