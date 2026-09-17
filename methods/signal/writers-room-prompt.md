@@ -30,18 +30,23 @@ From my positioning and the viewer's problems, map the problem spaces I can own.
 category), one broader cluster, and the rest as reach bets. Hold them light: these are
 working hypotheses the data will confirm or kill, not vows.
 
-Then prove the lane is real. Before I go, hand me ONE example query per tool, drawn from
-my clusters, so I know exactly what to type. I will run the checks in my browser and paste
-back what I find (typed notes are fine; for a chart, I will describe it or paste a
-screenshot); help me read them:
-- YouTube's own search autocomplete (the questions people actually type)
-- Ubersuggest keyword ideas at app.neilpatel.com (free account needed, 3 searches a day;
-  the volume numbers are hidden on free, the keyword ideas are enough)
-- Google Trends with the search type set to YouTube (is the lane rising or fading)
+Then corroborate the lane with demand signals. **This is corroboration, not the gate: the
+outlier harvest in Step 3 is the hard evidence, and the shortlist must never stall here.**
+One check the OS can run itself; the other two need you in a browser:
+- **YouTube search autocomplete — the OS can fetch this, no browser.** For a cluster's seed
+  phrase, Claude pulls the real suggestions headlessly (URL-encode the phrase):
+  `curl -s "https://suggestqueries-clients6.youtube.com/complete/search?client=firefox&ds=yt&q=SEED"`
+  The array it returns is the questions people actually type.
+- **Ubersuggest** keyword ideas at app.neilpatel.com (free account, 3 searches a day; the
+  keyword ideas are enough) — you run this in your browser and paste back.
+- **Google Trends** with the search type set to YouTube (is the lane rising or fading) — you
+  run this in your browser and paste back.
 
 Record the clusters and their evidence in `channel/content-pillars.md`, using
-`channel/content-pillars-template.md`, marked as a working hypothesis, held light. If a
-cluster shows no demand at all, say so and adjust.
+`channel/content-pillars-template.md`, marked as a working hypothesis, held light. **If you
+can't run the browser checks right now, don't stall: proceed on the autocomplete plus the
+outlier harvest, and mark each cluster's demand `[unverified]` until you do.** If a cluster
+shows no demand at all across what you did check, say so and adjust.
 
 ## Step 3. Viewer Soul and the in-niche swipe
 

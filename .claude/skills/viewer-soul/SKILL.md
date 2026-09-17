@@ -48,7 +48,10 @@ above their channel's median (minimum 5,000 views), downloads their **thumbnails
 Read `candidates.json` and curate. Drop:
 - **Evergreen megahits**: an old classic on a channel whose recent uploads are small
   produces absurd multiples (a 10-year-old TED talk can read as 800,000x). Prefer
-  outliers from roughly the last 12 months; if the upload date is unclear, open the URL.
+  outliers from roughly the last 12 months. Each record now carries `upload_date` (the video's
+  date when it is in its channel's recent feed) and `in_recent_feed`; treat `in_recent_feed:
+  false`, or an `upload_date` older than ~12 months, as the evergreen flag, and open the URL
+  only if you still can't tell.
 - **Tiny-median spikes**: a channel median under ~100 views makes the multiple
   directional at best. Note it, don't headline it.
 - **Off-niche accidents** that matched a query but not the persona.

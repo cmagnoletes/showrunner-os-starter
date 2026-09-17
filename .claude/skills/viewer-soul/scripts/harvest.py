@@ -69,12 +69,17 @@ def channel_median(channel_id: str, exclude_id: str, cache: dict) -> tuple:
             print(f"[harvest] RSS failed for {channel_id}: {e}", file=sys.stderr)
             cache[channel_id] = []
             return None, 0
-        ids = re.findall(r"<yt:videoId>([^<]+)</yt:videoId>", xml)
-        views = re.findall(r'<media:statistics views="(\d+)"', xml)
-        entries = list(zip(ids, [int(v) for v in views]))
+        entries = []
+        for chunk in xml.split("<entry>")[1:]:
+            m_id = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", chunk)
+            m_v = re.search(r'<media:statistics views="(\d+)"', chunk)
+            m_p = re.search(r"<published>([^<]+)</published>", chunk)
+            if m_id and m_v:
+                entries.append((m_id.group(1), int(m_v.group(1)),
+                                m_p.group(1)[:10] if m_p else None))
         cache[channel_id] = entries
         time.sleep(0.4)  # politeness between feed fetches
-    sample = [v for (i, v) in entries if i != exclude_id]
+    sample = [v for (i, v, p) in entries if i != exclude_id]
     if len(sample) < 5:
         return None, len(sample)  # not enough recent data to judge
     return statistics.median(sample), len(sample)
@@ -135,6 +140,10 @@ def main() -> None:
         row["channel_median"] = med
         row["median_sample"] = n
         row["multiple"] = round(row["views"] / med, 1) if med else None
+        pub = next((p for (i, v, p) in cache.get(row["channel_id"], [])
+                    if i == row["id"]), None)
+        row["upload_date"] = pub            # ISO date when the video is in the channel's recent feed
+        row["in_recent_feed"] = pub is not None  # False = not in last ~15 uploads (older/evergreen suspect)
         judged.append(row)
 
     outliers = [r for r in judged

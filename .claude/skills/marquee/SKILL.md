@@ -33,11 +33,14 @@ judge the result.
 
 ## The protocol
 
-### 1. Locate the video and read
+### 1. Locate the video, lock the title, read
 
-Ask which video (`videos/001/`, `002/`...). Read the four inputs above. Restate in
-three lines: the locked title, who the viewer is, and the one thing the beat sheet
-pays off (the third sign, the trick, the number). Those three lines drive everything.
+Ask which video (`videos/001/`, `002/`...). Read the four inputs above. **Lock the title
+first:** the shortlist carries a working `[PROPOSED]` title; tighten it once for the click
+if it needs it (owner picks or rewrites — tighten only, never re-topic), then fix it and
+write it into the marquee record. Restate in three lines: the locked title, who the viewer
+is, and the one thing the beat sheet pays off (the third sign, the trick, the number).
+Those three lines drive everything.
 
 ### 2. The archetype (the owner picks by looking)
 
@@ -83,7 +86,9 @@ From the chosen archetype's anatomy, write:
   Phone at eye level, window light in front, props out of frame.
 - **Build sheet:** canvas 1280 by 720; free cutout options (Photopea Magic Cut,
   NoBG.space, Preview on Mac, Paint on Windows; not Canva's, it's paid); compose in
-  Canva or Photopea; the owner's brand font and colors from the baseline; words in the
+  Canva or Photopea; the owner's brand font and colors from the baseline (if the baseline's
+  visual tokens are a `[GAP]`, use a plain bold sans-serif + a muted high-contrast
+  placeholder, flag it, and don't invent a full identity); words in the
   left two-thirds, upper or lower band, clear of the face; one accent color on the
   payoff word only; bottom-right empty; export PNG.
 

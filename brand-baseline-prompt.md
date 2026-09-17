@@ -68,9 +68,9 @@ Produce ONE document titled "Brand Baseline: [my name], v1" with these sections,
 4. Differentiation: what I do that others can't or won't, the industry practice I stand against, reference channels with take/leave lists
 5. Story: catalyst, core truth, proof, plus 3-4 ready-to-say forward-facing credential lines
 6. Voice: how I talk, signature phrases, never-say list, spent phrases to rotate
-7. Visual baseline: colors (hex), fonts, logo locations, on-brand and off-brand notes
+7. Visual baseline: colors (hex), fonts, logo locations, on-brand and off-brand notes. If no design assets exist yet, capture the on-brand / off-brand DIRECTION from the interview and mark colors, fonts, and logo [GAP] to fill from real assets later — never invent tokens
 8. The business connection: offer, viewer destination, calls to action
 
-Before finalizing: any section whose entries are all [PROPOSED] is unfinished; come back and interview me until every section holds at least one [YOURS] or [INTERVIEW] entry. Close the document with the ten most load-bearing lines listed for my explicit approval or edit.
+Before finalizing: any section whose entries are all [PROPOSED] is unfinished; come back and interview me until every section holds at least one [YOURS] or [INTERVIEW] entry — with one honest exception. If I have no existing design assets, the Visual baseline's colors, fonts, and logo may legitimately stay [GAP]: record a short visual DIRECTION (on-brand / off-brand) from the interview so the section isn't hollow, mark the tokens [GAP], and say where they'll come from (real assets when they exist, or the packaging method). A truthful "not yet" beats an invented palette. Close the document with the ten most load-bearing lines listed for my explicit approval or edit.
 
 Final rule, written into the document itself: this file is canonical and living. Every future tool and every future draft AUGMENTS it. Nothing regenerates it from scratch.

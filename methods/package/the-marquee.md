@@ -9,9 +9,10 @@ The one law: the title and the thumbnail are two shots at the same viewer. Spend
 on different things. The title names the stakes. The thumbnail shows the state, or asks
 a question the title doesn't close. A thumbnail that repeats the title wastes a shot.
 
-The title is locked before this method runs. Session 2 chose it with evidence, and the
-video was written and recorded to keep its promise. The Marquee never rewrites the
-title; it builds the other half of the package.
+The title is locked as the first move of this method. Your shortlist carried a working
+title and the video was recorded to that concept; packaging is where the title gets
+tightened for the click and then locked. After that first lock the Marquee never rewrites
+it — tighten once, never re-topic — and the thumbnail builds the other half of the package.
 
 ## Part 1 · Two shots, one promise
 
@@ -69,7 +70,10 @@ title; it builds the other half of the package.
   bottom-right corner belongs to YouTube's duration badge; keep your words and your
   face out of it (a shoulder or the background touching it is fine).
 - Bold sans-serif, your brand font, high contrast against the background. One accent
-  color, spent on the one word that carries the payoff, nowhere else.
+  color, spent on the one word that carries the payoff, nowhere else. If your brand hasn't
+  set a font and colors yet (a visual-baseline `[GAP]`), use a plain bold sans-serif and a
+  muted, high-contrast placeholder, flag it, and set the real tokens before this ships —
+  never invent a whole visual identity to fill the gap.
 - Judge it at 168 pixels wide and at 120, never at full size. Both are smaller than
   anything YouTube serves on desktop (the watch page's suggested column renders about 248
   wide), so words that hold there hold everywhere. If the words or the face fall apart

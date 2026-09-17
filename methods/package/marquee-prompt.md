@@ -19,8 +19,10 @@ everything:
    title, the angle, the problem it rewards), `videos/00X/beat-sheet.md` (what the
    video actually says), and `methods/package/the-marquee.md` (the doctrine). Then
    follow `.claude/skills/marquee/SKILL.md` step by step.
-2. The title is locked. Never propose a new title, never "tighten" it. The video was
-   written to keep that title's promise; the thumbnail is the other shot.
+2. The title gets locked here, first — then never touched again. Your shortlist carried a
+   working title (still `[PROPOSED]`); the packaging method is where it is tightened for the
+   click and locked. So Step 1 locks it (tighten only, never re-topic — the video was
+   recorded to this concept), and after that the thumbnail never restates or rewrites it.
 3. My words win. Every word set you propose is proposed until I pick it or rewrite it.
    Never invent a number, a claim, or a story the beat sheet doesn't contain.
 4. You never make the face. The photo is mine, real, taken by me, and you ask me to
@@ -28,10 +30,19 @@ everything:
    brief; I shoot it. You never generate, alter, or replace my face.
 5. Plain language both ways. No design jargon I'd have to decode.
 
-## Step 1 · The video and the archetype
+## Step 1 · Lock the title, then pick the archetype
 
 Ask which video we're packaging (`videos/001/`, `002/`...). Pull its shortlist row and
-its beat sheet. Then show me the four simple archetypes from
+its beat sheet.
+
+**First, lock the title.** The shortlist row carries a working title, still `[PROPOSED]`.
+Read it against the beat sheet's hook. If it is already sharp, lock it as is. If it needs
+tightening for the click, propose two or three tightened versions (mine to pick or
+rewrite) — tighten only, never change the topic the video was recorded to, and never make
+it a claim the video does not keep. Write the locked title into the video's marquee record;
+from here it is fixed, and the thumbnail is the other shot.
+
+Then show me the four simple archetypes from
 `.claude/skills/marquee/references/archetypes.md`, each with its one-line shape and
 its real examples, recommend one for this video and say why in two sentences. I pick.
 Everything after this is built inside that archetype's anatomy.
