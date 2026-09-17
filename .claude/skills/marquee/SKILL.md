@@ -123,11 +123,25 @@ python3 .claude/skills/marquee/scripts/mockup.py --thumb "<path-to.png>" \
 
 (Windows: `python`.) It writes `videos/00X/marquee-preview.html` (home feed, watch
 sidebar, search row, phone, and a glance strip at 168 and 120 pixels) with the owner's
-thumbnail among neighbor cards. If the owner's swipe file has saved thumbnails in
-`channel/swipe/`, pass `--neighbors channel/swipe/in-niche/thumbs` so the neighbors are
-real competitors. If Chrome is installed it also writes `marquee-preview.png`; if not,
-the owner opens the HTML in a browser. Tell the owner to look at the 168 and 120 pixel
-strip first: if the words or the face fall apart there, that is the fix.
+thumbnail among neighbor cards.
+
+**The neighbors must be real.** The feed test only means something next to the videos
+the owner actually competes with. In order:
+1. If `channel/swipe/in-niche/thumbs/` exists (the Viewer Soul harvest from the Writer's
+   Room), the script uses it on its own and shows each neighbor's real title, channel and
+   view count from `candidates.json`, ranked by multiple.
+2. If it does not exist, build one before rendering: `python3
+   .claude/skills/marquee/scripts/neighbors.py --out channel/swipe/in-niche --from
+   channel/concept-shortlist.md channel/swipe-file.md` pulls the thumbnails, titles and
+   channels of every video those files cite (no API key). Add URLs on the command line
+   for any competitor the owner names.
+3. Only if neither yields a single video, render with placeholders and say so plainly:
+   the preview labels them, and the owner should run the Writer's Room harvest before
+   trusting the feed. Never describe placeholder cards as competitors.
+
+If Chrome is installed it also writes `marquee-preview.png`; if not, the owner opens the
+HTML in a browser. Tell the owner to look at the 168 and 120 pixel strip first: if the
+words or the face fall apart there, that is the fix.
 
 ### 6. Write, update, commit
 

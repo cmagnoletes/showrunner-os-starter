@@ -46,4 +46,5 @@ Scale feeds Signal. There is no magic formula; there are experiments.
 - **Evidence over instinct.** Topic and concept choices carry their evidence (demand, outliers) with them.
 - Each method reads `brand-baseline.md` and the relevant `channel/` files first, then writes its
   output into `channel/` or the current video folder.
-- **Commit after each meaningful step.** The git history is the memory.
+- **Commit after each meaningful step.** The git history is the memory. If this folder is not a
+  git repository yet (a ZIP download), run `git init` once before the first commit.

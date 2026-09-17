@@ -4,10 +4,17 @@ search row, phone, and a glance strip at 168 and 120 px. Standard library only.
 
 Usage:
   python3 mockup.py --thumb path.png --title "Locked title" --channel "Name" --out videos/001/
-  optional: --neighbors channel/swipe/in-niche/thumbs   (real competitor thumbnails)
+  optional: --neighbors channel/swipe/in-niche/thumbs   (real competitor thumbnails; used
+            automatically when that folder exists in the current directory)
             --no-png   (skip the headless-Chrome screenshot)
+
+Neighbors: every image in the neighbors folder becomes a card. If a candidates.json sits in
+that folder or one level up (the Viewer Soul harvest writes one, and scripts/neighbors.py
+builds one from URLs), each card carries the video's real title, channel and view count,
+ordered by outlier multiple. Without a neighbors folder the cards are labelled placeholders,
+and the preview says so: never judge a thumbnail against invented competition.
 """
-import argparse, base64, glob, html, os, random, shutil, subprocess, sys
+import argparse, base64, glob, html, json, os, random, shutil, subprocess, sys
 
 PLACEHOLDER_TITLES = [
     "How I finally fixed this after 3 years", "The mistake everyone makes with this",
@@ -21,6 +28,7 @@ PLACEHOLDER_CHANNELS = ["Northline", "Rowan Media", "The Weekly Desk", "Studio F
 PALETTES = [("#2b3a67", "#f4a261"), ("#1f1f1f", "#e63946"), ("#264653", "#e9c46a"),
             ("#3d405b", "#81b29a"), ("#6d597a", "#f2cc8f"), ("#0b132b", "#5bc0be"),
             ("#4a4e69", "#c9ada7"), ("#1b263b", "#e0e1dd"), ("#2d6a4f", "#d8f3dc")]
+DEFAULT_NEIGHBORS = os.path.join("channel", "swipe", "in-niche", "thumbs")
 
 
 def data_uri(path):
@@ -30,54 +38,116 @@ def data_uri(path):
         return f"data:image/{mime};base64," + base64.b64encode(f.read()).decode()
 
 
+def fmt_views(n):
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        return ""
+    if n >= 1_000_000:
+        return f"{n / 1_000_000:.1f}M views".replace(".0M", "M")
+    if n >= 1_000:
+        return f"{n / 1_000:.0f}K views"
+    return f"{n} views"
+
+
+def load_candidates(neighbors_dir):
+    """Map thumbnail file name -> harvest record, from candidates.json beside or above thumbs/."""
+    here = os.path.abspath(neighbors_dir)
+    for cand in (os.path.join(here, "candidates.json"), os.path.join(os.path.dirname(here), "candidates.json")):
+        if not os.path.isfile(cand):
+            continue
+        try:
+            with open(cand, encoding="utf-8") as f:
+                data = json.load(f)
+        except (OSError, ValueError):
+            continue
+        rows = data.get("outliers", []) if isinstance(data, dict) else data
+        out = {}
+        for r in rows or []:
+            if not isinstance(r, dict) or not r.get("id"):
+                continue
+            name = os.path.basename(r.get("thumb") or "") or f"{r['id']}.jpg"
+            out[name] = r
+            out.setdefault(f"{r['id']}.jpg", r)
+        return out
+    return {}
+
+
 def neighbor_cards(neighbors_dir, n):
-    files = []
+    """Return (cards, real_count). A card is (img_html, title, channel, meta_text)."""
+    files, meta = [], {}
     if neighbors_dir and os.path.isdir(neighbors_dir):
         for pat in ("*.jpg", "*.jpeg", "*.png", "*.webp"):
             files += glob.glob(os.path.join(neighbors_dir, pat))
-        random.shuffle(files)
-    cards = []
-    for i in range(n):
-        title = PLACEHOLDER_TITLES[i % len(PLACEHOLDER_TITLES)]
-        ch = PLACEHOLDER_CHANNELS[i % len(PLACEHOLDER_CHANNELS)]
-        if i < len(files):
-            img = f'<img src="{data_uri(files[i])}" alt="">'
+        meta = load_candidates(neighbors_dir)
+        if meta:
+            def rank(f):
+                r = meta.get(os.path.basename(f), {})
+                return (-(r.get("multiple") or 0), -(r.get("views") or 0))
+            files.sort(key=rank)
         else:
+            random.shuffle(files)
+    cards, real = [], 0
+    for i in range(n):
+        if i < len(files):
+            r = meta.get(os.path.basename(files[i]), {})
+            title = r.get("title") or PLACEHOLDER_TITLES[i % len(PLACEHOLDER_TITLES)]
+            ch = r.get("channel") or PLACEHOLDER_CHANNELS[i % len(PLACEHOLDER_CHANNELS)]
+            views = fmt_views(r.get("views"))
+            mult = r.get("multiple")
+            extra = f" · {mult}x" if mult else ""
+            cards.append((f'<img src="{data_uri(files[i])}" alt="">', title, ch, (views + extra).strip(" ·")))
+            real += 1
+        else:
+            title = PLACEHOLDER_TITLES[i % len(PLACEHOLDER_TITLES)]
+            ch = PLACEHOLDER_CHANNELS[i % len(PLACEHOLDER_CHANNELS)]
             bg, fg = PALETTES[i % len(PALETTES)]
             img = (f'<div class="ph" style="background:linear-gradient(135deg,{bg},{fg} 140%)">'
                    f'<span>{html.escape(title.split()[0].upper())}</span></div>')
-        cards.append((img, title, ch))
-    return cards
+            cards.append((img, title, ch, "placeholder"))
+    return cards, real
 
 
-def card_html(img, title, ch, mine=False, views="12K views · 3 days ago"):
+def card_html(img, title, ch, meta, mine=False):
     cls = "card mine" if mine else "card"
+    sub = html.escape(ch) + (f" · {html.escape(meta)}" if meta else "")
     return (f'<div class="{cls}"><div class="thumb">{img}<span class="dur">12:41</span></div>'
             f'<div class="meta"><div class="avatar"></div><div><div class="t">{html.escape(title)}</div>'
-            f'<div class="c">{html.escape(ch)} · {views}</div></div></div></div>')
+            f'<div class="c">{sub}</div></div></div></div>')
 
 
 def build(thumb, title, channel, neighbors_dir):
     mine = f'<img src="{data_uri(thumb)}" alt="">'
-    nb = neighbor_cards(neighbors_dir, 14)
+    nb, real = neighbor_cards(neighbors_dir, 14)
     home = nb[:8]; home.insert(4, ("MINE",))
     side = nb[8:12]; side.insert(1, ("MINE",))
     search = nb[12:14]; search.insert(1, ("MINE",))
     phone = nb[3:5]; phone.insert(1, ("MINE",))
 
-    def render(cards, views="12K views · 3 days ago"):
+    def render(cards):
         out = []
         for c in cards:
             if c == ("MINE",):
-                out.append(card_html(mine, title, channel, True, "New"))
+                out.append(card_html(mine, title, channel, "New", True))
             else:
-                out.append(card_html(*c, views=views))
+                out.append(card_html(*c))
         return "".join(out)
+
+    if real == 0:
+        note = ("Yours has the yellow outline. <b>The neighbors are placeholders.</b> Run the Writer's Room "
+                "harvest (Session 2) or scripts/neighbors.py so this feed shows the real outliers you compete "
+                "with, then render again. Judging against invented cards proves nothing.")
+    elif real < 14:
+        note = (f"Yours has the yellow outline. {real} neighbors are real outliers from your swipe file "
+                f"(ranked by multiple); the rest are placeholders. Harvest more for a fuller feed.")
+    else:
+        note = "Yours has the yellow outline. Every neighbor is a real outlier from your swipe file, ranked by multiple. Judge it next to them, not alone."
 
     css = """
     body{margin:0;background:#0f0f0f;color:#f1f1f1;font:14px/1.4 Roboto,Arial,sans-serif}
     h2{font:500 13px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#aaa;margin:36px 24px 12px}
     .note{color:#aaa;font-size:12px;margin:0 24px 8px}
+    .note b{color:#ffd54f}
     .home{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 12px;padding:0 24px;max-width:1120px}
     .card{display:flex;flex-direction:column;gap:10px}
     .thumb{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#222}
@@ -108,7 +178,7 @@ def build(thumb, title, channel, neighbors_dir):
     """
     doc = f"""<!doctype html><html><head><meta charset="utf-8"><title>Marquee preview</title>
     <style>{css}</style></head><body>
-    <h2>Home feed</h2><p class="note">Yours has the yellow outline. Judge it next to the neighbors, not alone.</p>
+    <h2>Home feed</h2><p class="note">{note}</p>
     <div class="home">{render(home)}</div>
     <h2>Watch page · suggested column (248 px, as YouTube renders it on a 1440 px screen)</h2>
     <div class="watch"><div class="player"></div><div class="side">{render(side)}</div></div>
@@ -121,7 +191,7 @@ def build(thumb, title, channel, neighbors_dir):
       <figure><img src="{data_uri(thumb)}" width="120"><figcaption>120 px · stress test</figcaption></figure>
       <figure><img src="{data_uri(thumb)}" width="88"><figcaption>88 px · squint</figcaption></figure>
     </div></body></html>"""
-    return doc
+    return doc, real
 
 
 def find_chrome():
@@ -153,11 +223,19 @@ def main():
     a = ap.parse_args()
     if not os.path.isfile(a.thumb):
         sys.exit(f"thumbnail not found: {a.thumb}")
+    if not a.neighbors and os.path.isdir(DEFAULT_NEIGHBORS):
+        a.neighbors = DEFAULT_NEIGHBORS
     os.makedirs(a.out, exist_ok=True)
     html_path = os.path.join(a.out, "marquee-preview.html")
+    doc, real = build(a.thumb, a.title, a.channel, a.neighbors)
     with open(html_path, "w", encoding="utf-8") as f:
-        f.write(build(a.thumb, a.title, a.channel, a.neighbors))
+        f.write(doc)
     print(f"wrote {html_path}")
+    if real == 0:
+        print("NEIGHBORS ARE PLACEHOLDERS: no real competitor thumbnails found. Run the Viewer Soul "
+              "harvest or scripts/neighbors.py, then render again.")
+    else:
+        print(f"neighbors: {real} real outliers from {a.neighbors}")
     if a.no_png:
         return
     chrome = find_chrome()
